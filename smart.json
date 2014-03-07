@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "lodash": {},
+    "iron-router": {},
+    "collection2": {}
+  }
+}
