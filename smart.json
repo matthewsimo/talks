@@ -2,6 +2,7 @@
   "packages": {
     "lodash": {},
     "iron-router": {},
-    "collection2": {}
+    "collection2": {},
+    "scss": {}
   }
 }
