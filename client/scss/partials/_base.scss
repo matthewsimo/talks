@@ -1,0 +1,43 @@
+$font: 'Whitney SSm A', 'Whitney SSm B';
+
+
+@mixin transition($duration) {
+	transition: all $duration ease-in-out;
+}
+
+%link-trans {
+	@include transition(0.25s);
+}
+
+html {
+	background: $bg-color;
+	color: $text-color;
+	line-height: 1.4;
+	@include transition(0.5s);
+	font-family: $font;
+	font-weight: 300;
+}
+
+a {
+	color: $text-color;
+	font-weight: 600;
+	text-decoration: none;
+	@extend %link-trans;
+
+	&:hover {
+		color: $link-color;
+	}
+
+
+	path{
+		fill: $text-color;
+		@extend %link-trans;
+	}
+
+	&:hover path {
+		fill: $link-color;
+		@extend %link-trans;
+	}
+}
+
+
