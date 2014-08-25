@@ -9,7 +9,7 @@ $bp-lg: 75.1em;
 
 
 // Base Colors
-$color-dark: #27262B;
+$color-dark: #232228;
 $color-light: #E3E3E3;
 $color-accent: #22C26C;
 
@@ -35,7 +35,7 @@ html {
 #main-header {
 	@extend .row;
 
-	align-items: baseline;
+	@include align-items(baseline);
 	margin-bottom: 1em;
 }
 
@@ -43,7 +43,7 @@ html {
 #main-footer {
 	@extend .row;
 	
-	align-items: baseline;
+	@include align-items(baseline);
 	font-size: .8em;
 	margin: 5em 0 3em;
 
@@ -59,7 +59,7 @@ html {
 
 #main-header > a,
 #main-footer > a {
-	text-align: center;
+	text-align: left;
 }
 
 a.inline-icon span {
@@ -67,10 +67,10 @@ a.inline-icon span {
 	padding: 0 0 0 25px;
 	position: relative;
 	text-align: left;
-	top: -1.3em;
+	top: -1.55em;
 
 	#main-header & {
-		top: -1.35em;
+		top: -1.58em;
 	}
 
 }
@@ -97,11 +97,4 @@ a.inline-icon span {
 		font-size: 130%;
 	}
 
-	a.inline-icon span {
-		top: -1.25em;
-
-		#main-header & {
-			top: -1.15em;
-		}
-	}
 }

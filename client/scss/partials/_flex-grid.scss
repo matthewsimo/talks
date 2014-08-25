@@ -23,6 +23,22 @@ $half-gutter-adjustment: -$half-gutter;
   display: flex;
 }
 
+@mixin flex-flow($values) {
+  -webkit-box-flex-flow: $values;
+  -moz-box-flex-flow:  $values;
+  -webkit-flex-flow:  $values;
+  -ms-flex-flow:  $values;
+	-webkit-flex-flow: $values;
+	flex-flow: $values;
+}
+
+@mixin align-items($value) {
+  -moz-align-items:  $value;
+  -webkit-align-items:  $value;
+  -ms-align-items:  $value;
+  align-items:  $value;
+}
+
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex:  $values;
@@ -82,8 +98,7 @@ $half-gutter-adjustment: -$half-gutter;
 .row {
 	box-sizing: border-box;
 	@include flexbox;
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
+	@include flex-flow(row wrap);
 	margin-right: $half-gutter-adjustment;
 	margin-left: $half-gutter-adjustment;
 }
@@ -91,7 +106,7 @@ $half-gutter-adjustment: -$half-gutter;
 
 @mixin col {
   box-sizing: border-box;
-	@include flex(0 0);
+	@include flex(1 0);
   padding-right: $half-gutter;
   padding-left: $half-gutter;
 }
