@@ -1,5 +1,10 @@
 
 @import "partials/normalize";
+
+$bp-sm: 30.1em;
+$bp-md: 48.1em;
+$bp-lg: 75.1em;
+
 @import "partials/flex-grid";
 
 
@@ -15,17 +20,16 @@ $bg-color: $color-dark;
 
 @import "partials/base";
 
+html {
+	font-size: 110%;
+}
+
 #wrapper {
 	margin: 5em auto 7em;
 	max-width: 36em;
 	width: 80%;
 }
 
-@media only screen and (min-width: 48em) {
-	#wrapper { 
-		width: 60%;
-	}
-}
 
 
 #main-header {
@@ -33,19 +37,6 @@ $bg-color: $color-dark;
 
 	align-items: baseline;
 	margin-bottom: 1em;
-
-	ul {
-		@extend .row;
-
-		padding: 0;
-		margin-bottom: 0;
-		margin-top: 0;
-	}
-
-	li {
-		list-style: none;
-	}
-
 }
 
 
@@ -63,7 +54,6 @@ $bg-color: $color-dark;
 	svg {
 		height: 1.3em;
 	}
-
 }
 
 
@@ -83,24 +73,35 @@ a.inline-icon span {
 		top: -1.35em;
 	}
 
-	@media only screen and (min-width: 75em) {
-		top: -1.25em;
-
-		#main-header & {
-			top: -1.15em;
-		}
-	}
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: $bp-sm) {
 	a.inline-icon span {
 		display: inline;
 	}
 }
 
-
-@media only screen and (min-width: 75em) {
+@media only screen and (min-width: $bp-md) {
 	html {
 		font-size: 125%;
+	}
+
+	#wrapper { 
+		width: 60%;
+	}
+}
+
+
+@media only screen and (min-width: $bp-lg) {
+	html {
+		font-size: 130%;
+	}
+
+	a.inline-icon span {
+		top: -1.25em;
+
+		#main-header & {
+			top: -1.15em;
+		}
 	}
 }

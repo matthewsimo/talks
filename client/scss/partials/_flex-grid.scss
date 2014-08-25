@@ -15,6 +15,31 @@
 $half-gutter: 0.5rem;
 $half-gutter-adjustment: -$half-gutter;
 
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+
 /**
  * Function for fetching column percentage.
  *
@@ -56,9 +81,9 @@ $half-gutter-adjustment: -$half-gutter;
  */
 .row {
 	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	@include flexbox;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
 	margin-right: $half-gutter-adjustment;
 	margin-left: $half-gutter-adjustment;
 }
@@ -66,18 +91,14 @@ $half-gutter-adjustment: -$half-gutter;
 
 @mixin col {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
+	@include flex(0 0);
   padding-right: $half-gutter;
   padding-left: $half-gutter;
 }
 
 @mixin col-flex {
 	@include col;
-  flex-grow: 1;
-  flex-basis: 0;
+	@include flex(1 0);
   max-width: 100%;
 }
 
@@ -123,7 +144,7 @@ $half-gutter-adjustment: -$half-gutter;
 
 @include grid('xs');
 
-$size-namespace-obj: (48em, sm), (62em, md), (75em, lg);
+$size-namespace-obj: ($bp-sm, sm), ($bp-md, md), ($bp-lg, lg);
 
 @each $val in $size-namespace-obj {
 
