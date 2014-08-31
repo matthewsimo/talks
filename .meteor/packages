@@ -6,6 +6,7 @@
 standard-app-packages
 autopublish
 insecure
-iron-router
-collection2
-scss
+iron:router
+fourseven:scss
+alethes:lodash
+
