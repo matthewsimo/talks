@@ -23,11 +23,11 @@
 <template name="layout">
 
 <div id="wrapper">
-  {{> header}}
+  {{> yield "header" }}
 
   {{> yield}}
 
-  {{> footer}}
+  {{> yield "footer" }}
 </div>
 
 </template>
