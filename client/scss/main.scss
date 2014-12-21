@@ -19,6 +19,7 @@ $link-color: $color-accent;
 $bg-color: $color-dark;
 
 @import "partials/base";
+@import "partials/resume";
 
 html {
 	font-size: 110%;
@@ -37,6 +38,10 @@ html {
 
 	@include align-items(baseline);
 	margin-bottom: 1em;
+
+	h1 {
+		margin-bottom: .25em;
+	}
 }
 
 
@@ -56,19 +61,20 @@ html {
 #main-header > a,
 #main-footer > a {
 	text-align: left;
+
+	&.col-last {
+		text-align: right;
+	}
 }
 
 a.inline-icon span {
-	display: none;
-	padding: 0 0 0 25px;
 	position: relative;
 	text-align: left;
-	top: -1.55em;
+	top: -3px;
+}
 
-	#main-header & {
-		top: -1.58em;
-	}
-
+.col-last {
+	text-align: right;
 }
 
 @media only screen and (min-width: $bp-sm) {
@@ -77,9 +83,6 @@ a.inline-icon span {
 		margin: 5em auto 7em;
 	}
 
-	a.inline-icon span {
-		display: inline;
-	}
 }
 
 @media only screen and (min-width: $bp-md) {
@@ -97,5 +100,4 @@ a.inline-icon span {
 	html {
 		font-size: 130%;
 	}
-
 }

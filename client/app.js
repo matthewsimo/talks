@@ -3,10 +3,6 @@ Router.configure({
   layoutTemplate: 'layout',
   loadingTempalte: 'loading',
   notFoundTemplate: 'notFound',
-	yieldRegions: {
-		'header': { to: 'header' },
-		'footer': { to: 'footer' }
-	},
 });
 
 
@@ -21,7 +17,10 @@ Router.route('/files/:filename', function () {
 	this.response.end("Loading file content\n");
 }, { where: 'server' });
 
-Router.route('/work-with-me', function () {
-	this.render('workWithMe');
+Router.route('/resume', function () {
+	this.render('resume');
+
+	this.render( 'header', { to: 'header' } );
+	this.render( 'footer', { to: 'footer' } );
 });
 

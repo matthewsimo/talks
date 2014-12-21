@@ -23,11 +23,11 @@
 <template name="layout">
 
 <div id="wrapper">
-  {{> yield "header" }}
+  {{> yield region='header' }}
 
   {{> yield}}
 
-  {{> yield "footer" }}
+  {{> yield region='footer' }}
 </div>
 
 </template>
