@@ -24,3 +24,10 @@ Router.route('/resume', function () {
 	this.render( 'footer', { to: 'footer' } );
 });
 
+
+Router.route('/portfolio', function() {
+	this.render('portfolio');
+
+	this.render( 'header', { to: 'header' } );
+	this.render( 'footer', { to: 'footer' } );
+});
