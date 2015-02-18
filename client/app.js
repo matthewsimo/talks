@@ -18,7 +18,7 @@ Router.route('/files/:filename', function () {
 	this.response.end("Loading file content\n");
 }, { where: 'server' });
 
-Router.route('resume', function() {
+Router.route('/resume', function() {
 	this.redirect('/work-with-me');
 });
 
