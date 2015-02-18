@@ -14,7 +14,7 @@ deps@1.0.6
 ejson@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
-fourseven:scss@1.0.0
+fourseven:scss@2.0.0_1
 geojson-utils@1.0.2
 html-tools@1.0.3
 htmljs@1.0.3
@@ -26,8 +26,8 @@ iron:core@1.0.7
 iron:dynamic-template@1.0.7
 iron:layout@1.0.7
 iron:location@1.0.7
-iron:middleware-stack@1.0.6
-iron:router@1.0.6
+iron:middleware-stack@1.0.7
+iron:router@1.0.7
 iron:url@1.0.7
 jquery@1.11.3
 json@1.0.2
