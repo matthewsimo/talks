@@ -12,7 +12,6 @@ $font: 'Whitney SSm A', 'Whitney SSm B', 'Helvetica Neue',sans-serif;
 html {
 	background: $bg-color;
 	color: $text-color;
-	line-height: 1.4;
 	@include transition(0.5s);
 	font-family: $font;
 	font-weight: 300;
@@ -38,5 +37,9 @@ a {
 		fill: $link-color;
 		@extend %link-trans;
 	}
+}
+
+small + p { 
+	margin-top: 0;
 }
 
