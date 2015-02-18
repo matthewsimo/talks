@@ -1,4 +1,6 @@
 
-Template.footer.currentYear = Template.homeFooter.currentYear = function() {
-	return new Date().getFullYear();
-}
+Template.footer.helpers({
+	currentYear:  function() {
+		return new Date().getFullYear();
+	}
+});
