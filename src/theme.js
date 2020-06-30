@@ -94,6 +94,8 @@ const heading = {
   fontFamily: 'inherit',
   lineHeight: 'heading',
   fontWeight: 'heading',
+  fontVariationSettings: 'heading-normal',
+  overflowWrap: 'anywhere',
 };
 
 const hue = '200';
@@ -111,15 +113,51 @@ const colors = {
   background: colorScale[8],
   primary: colorScale[4],
   secondary: colorScale[6],
-  muted: colorScale[2],
+  muted: colorScale[7],
   modes: {
     dark: {
       text: colorScale[8],
       background: colorScale[0],
       primary: colorScale[4],
       secondary: colorScale[6],
+      muted: colorScale[1],
     },
   },
+};
+
+const combineObjects = (obj1, obj2) => {
+  return Object.keys(obj1).reduce((acc, obj1Key) => {
+    Object.keys(obj2).map((obj2Key) => {
+      acc[`${obj1Key}-${obj2Key}`] = `${obj1[obj1Key]}, ${obj2[obj2Key]}`;
+    });
+    return acc;
+  }, {});
+};
+
+const fontVariationSettingsPrimitives = {
+  weights: {
+    body: `'wght' 300`,
+    heading: `'wght' 700`,
+  },
+  slants: {
+    normal: `'slnt' -0.75`,
+    italic: `'slnt' -3.5`,
+  },
+};
+const fontVariationSettings = combineObjects(
+  { ...fontVariationSettingsPrimitives.weights },
+  { ...fontVariationSettingsPrimitives.slants }
+);
+
+const utils = {
+  inline: (type, val) => ({
+    [`${type}InlineStart`]: val,
+    [`${type}InlineEnd`]: val,
+  }),
+  block: (type, val) => ({
+    [`${type}BlockStart`]: val,
+    [`${type}BlockEnd`]: val,
+  }),
 };
 
 export const base = {
@@ -131,11 +169,20 @@ export const base = {
     variable: "'Inter var', sans-serif",
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [14, 16, 21, 24, 28, 32, 48, 64, 96],
+  fontVariationSettings,
+  fontSizes: [14, 18, 21, 24, 28, 32, 48, 64, 96],
   fontWeights: {
-    body: 400,
+    body: 300,
     heading: 700,
     bold: 700,
+  },
+  fontStyles: {
+    normal: 'normal',
+    italic: 'italic',
+  },
+  letterSpacings: {
+    body: '-0.014em',
+    ...['-0.006em', '-0.014em', '-0.018em', '-0.019em', '-0.021em', '-0.022em'],
   },
   lineHeights: {
     body: 1.5,
@@ -151,40 +198,45 @@ export const base = {
   },
   styles: {
     root: {
-      "@import url('https://rsms.me/inter/inter.css');": '',
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      '@supports (font-variation-settings: normal)': {
-        fontFamily: 'variable',
-        fontVariationSettings: `'wght' 300, 'slnt' -1.5`,
-      },
       padding: 3,
       backgroundColor: 'text',
+      '@supports (font-variation-settings: normal)': {
+        fontFamily: 'variable',
+        fontVariationSettings: 'body-normal',
+      },
     },
     h1: {
       ...heading,
       fontSize: 7,
+      letterSpacing: 5,
     },
     h2: {
       ...heading,
       fontSize: 6,
+      letterSpacing: 5,
     },
     h3: {
       ...heading,
       fontSize: 5,
+      letterSpacing: 5,
     },
     h4: {
       ...heading,
       fontSize: 4,
+      letterSpacing: 4,
     },
     h5: {
       ...heading,
       fontSize: 3,
+      letterSpacing: 3,
     },
     h6: {
       ...heading,
       fontSize: 0,
+      letterSpacing: 0,
     },
     p: {
       color: 'text',
@@ -195,9 +247,25 @@ export const base = {
     a: {
       color: 'primary',
     },
+    em: {
+      fontWeight: 'body',
+      fontStyle: 'italic',
+      fontVariationSettings: 'body-italic',
+    },
+    strong: {
+      fontWeight: 'heading',
+      fontStyle: 'normal',
+      fontVariationSettings: 'heading-normal',
+    },
     pre: {
       fontFamily: 'monospace',
       overflowX: 'auto',
+      padding: 3,
+      borderLeftWidth: 2,
+      borderLeftStyle: 'solid',
+      borderLeftColor: 'text',
+      backgroundColor: 'muted',
+      color: 'primary',
       code: {
         color: 'inherit',
       },
@@ -205,6 +273,10 @@ export const base = {
     code: {
       fontFamily: 'monospace',
       fontSize: 'inherit',
+      backgroundColor: 'muted',
+      color: 'primary',
+      ...utils.inline('padding', 1),
+      ...utils.inline('margin', 1),
     },
     table: {
       width: '100%',
@@ -221,6 +293,18 @@ export const base = {
     },
     img: {
       maxWidth: '100%',
+    },
+    blockquote: {
+      borderLeftStyle: 'solid',
+      borderLeftColor: 'text',
+      borderLeftWidth: 2,
+      backgroundColor: 'background',
+      color: 'primary',
+      margin: 0,
+      marginInlineStart: -3,
+      ...utils.inline('padding', 3),
+      ...utils.block('padding', 1),
+      fontStyle: 'italic',
     },
   },
 };
