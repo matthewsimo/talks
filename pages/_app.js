@@ -2,9 +2,9 @@ import React from 'react';
 import NextApp from 'next/app';
 import { Global, css } from '@emotion/core';
 
-import Header from 'components/Header';
+import Layout from 'components/Layout';
 import theme from 'src/theme';
-import { ThemeProvider, Container } from 'theme-ui';
+import { ThemeProvider } from 'theme-ui';
 
 export default class App extends NextApp {
   render() {
@@ -16,10 +16,9 @@ export default class App extends NextApp {
             @import url('https://rsms.me/inter/inter.css');
           `}
         />
-        <Container>
-          <Header />
+        <Layout>
           <Component {...pageProps} />
-        </Container>
+        </Layout>
       </ThemeProvider>
     );
   }

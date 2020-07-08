@@ -15,6 +15,11 @@ export default class extends Document {
           <InitializeColorMode />
           <Main />
           <NextScript />
+          <style jsx global>{`
+            #__next {
+              height: 100%;
+            }
+          `}</style>
         </body>
       </Html>
     );

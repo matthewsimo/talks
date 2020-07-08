@@ -89,13 +89,21 @@ const maybe = {
   },
 };
 
-const heading = {
-  color: 'text',
-  fontFamily: 'inherit',
-  lineHeight: 'heading',
-  fontWeight: 'heading',
-  fontVariationSettings: 'heading-normal',
-  overflowWrap: 'anywhere',
+const makeHeadingStyle = (fontSize, letterSpacing) => {
+  const heading = {
+    color: 'text',
+    fontFamily: 'inherit',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontVariationSettings: 'heading-normal',
+    overflowWrap: 'anywhere',
+  };
+
+  return {
+    ...heading,
+    fontSize,
+    letterSpacing,
+  };
 };
 
 const hue = '200';
@@ -160,8 +168,12 @@ const utils = {
   }),
 };
 
+export { utils };
+
 export const base = {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: {
+    ...[0, 4, 8, 16, 32, 64, 128, 256, 512],
+  },
   radii: [0, 3, 5, 8, 25],
   fonts: {
     body: "'Inter', sans-serif",
@@ -180,6 +192,9 @@ export const base = {
     normal: 'normal',
     italic: 'italic',
   },
+  image: {
+    width: '100%',
+  },
   letterSpacings: {
     body: '-0.014em',
     ...['-0.006em', '-0.014em', '-0.018em', '-0.019em', '-0.021em', '-0.022em'],
@@ -190,10 +205,15 @@ export const base = {
   },
   colors,
   layout: {
-    container: {
+    page: {
       backgroundColor: 'background',
       borderRadius: 1,
-      padding: 4,
+      padding: [3, 4],
+      minHeight: (theme) => [
+        `calc(100vh - ${theme.space[1] * 2}px)`,
+        `calc(100vh - ${theme.space[2] * 2}px)`,
+        `calc(100vh - ${theme.space[3] * 2}px)`,
+      ],
     },
   },
   styles: {
@@ -201,43 +221,20 @@ export const base = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      padding: 3,
+      padding: [1, 2, 3],
+      fontSize: ['110%', '120%', '135%'],
       backgroundColor: 'text',
       '@supports (font-variation-settings: normal)': {
         fontFamily: 'variable',
         fontVariationSettings: 'body-normal',
       },
     },
-    h1: {
-      ...heading,
-      fontSize: 7,
-      letterSpacing: 5,
-    },
-    h2: {
-      ...heading,
-      fontSize: 6,
-      letterSpacing: 5,
-    },
-    h3: {
-      ...heading,
-      fontSize: 5,
-      letterSpacing: 5,
-    },
-    h4: {
-      ...heading,
-      fontSize: 4,
-      letterSpacing: 4,
-    },
-    h5: {
-      ...heading,
-      fontSize: 3,
-      letterSpacing: 3,
-    },
-    h6: {
-      ...heading,
-      fontSize: 0,
-      letterSpacing: 0,
-    },
+    h1: makeHeadingStyle(7, 5),
+    h2: makeHeadingStyle(6, 5),
+    h3: makeHeadingStyle(5, 5),
+    h4: makeHeadingStyle(4, 4),
+    h5: makeHeadingStyle(3, 3),
+    h6: makeHeadingStyle(0, 0),
     p: {
       color: 'text',
       fontFamily: 'inherit',
@@ -292,7 +289,7 @@ export const base = {
       borderBottomStyle: 'solid',
     },
     img: {
-      maxWidth: '100%',
+      width: '100%',
     },
     blockquote: {
       borderLeftStyle: 'solid',
