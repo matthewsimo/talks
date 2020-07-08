@@ -1,3 +1,3 @@
 # Personal Site & Blog
 
-matthewsimo.com
+http://matthewsimo.com
