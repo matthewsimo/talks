@@ -15,7 +15,6 @@ export default () => {
   const pt = { mt: 7 };
   return (
     <Styled.div>
-      <Styled.h1>Demo</Styled.h1>
       <Styled.h2 marginTop={6}>Colors</Styled.h2>
       <ColorPalette omit={['modes', 'header']} />
       <Styled.h2 sx={pt}>Typography</Styled.h2>
