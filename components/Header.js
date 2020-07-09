@@ -1,15 +1,33 @@
 import React from 'react';
-import { Button, useColorMode } from 'theme-ui';
+import Link from 'next/link';
+import { Heading, Flex, IconButton } from 'theme-ui';
+import { Settings } from 'react-feather';
 
 const Header = () => {
-  const [colorMode, setColorMode] = useColorMode();
   return (
     <header>
-      <Button
-        onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
-      >
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
+      <Flex>
+        <Heading>
+          <Link href="/">
+            <a>Matthew Simo</a>
+          </Link>
+        </Heading>
+        <Flex>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+          <Link href="/words">
+            <a>Words</a>
+          </Link>
+          <Link href="/play">
+            <a>Play</a>
+          </Link>
+        </Flex>
+
+        <IconButton onClick={() => console.log('trigger theme customizer')}>
+          <Settings />
+        </IconButton>
+      </Flex>
     </header>
   );
 };

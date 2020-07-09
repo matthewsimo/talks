@@ -113,7 +113,7 @@ const lightness = [6, 16, 25, 35, 50, 65, 75, 88, 96];
 const getColor = (l) => `hsl(${hue}, ${saturation}, ${l}%)`;
 
 const colorScale = lightness.map((l) => getColor(l));
-console.log({ lightness, colorScale });
+//console.log({ lightness, colorScale });
 
 const colors = {
   ...colorScale,
@@ -208,12 +208,15 @@ export const base = {
     page: {
       backgroundColor: 'background',
       borderRadius: 1,
-      padding: [3, 4],
       minHeight: (theme) => [
         `calc(100vh - ${theme.space[1] * 2}px)`,
         `calc(100vh - ${theme.space[2] * 2}px)`,
         `calc(100vh - ${theme.space[3] * 2}px)`,
       ],
+      overflow: 'hidden',
+      '& > header, & > footer, & > div': {
+        padding: [3, 4],
+      },
     },
   },
   styles: {

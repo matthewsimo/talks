@@ -16,18 +16,18 @@ const ToggleColorButton = () => {
       }}
       onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
     >
-      {colorMode === 'light' ? (
-        <>
-          <Moon />
-          <Text pl={2} pr={2}>
-            Go Dark
-          </Text>
-        </>
-      ) : (
+      {colorMode === 'dark' ? (
         <>
           <Sun />
           <Text pl={2} pr={2}>
             Go Light
+          </Text>
+        </>
+      ) : (
+        <>
+          <Moon />
+          <Text pl={2} pr={2}>
+            Go Dark
           </Text>
         </>
       )}

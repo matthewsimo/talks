@@ -16,7 +16,7 @@ export default class App extends NextApp {
             @import url('https://rsms.me/inter/inter.css');
           `}
         />
-        <Layout>
+        <Layout {...this.props}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
