@@ -12,7 +12,7 @@ const Layout = ({ children, ...props }) => {
   return (
     <Container variant="page" sx={{ display: 'flex', flexDirection: 'column' }}>
       {router.pathname !== '/' && <Header />}
-      <Container sx={{ maxWidth: '80ch', mt: 80 }}>{children}</Container>
+      <Container sx={{ maxWidth: '80ch', mt: 80, zIndex: 1 }}>{children}</Container>
       {router.pathname !== '/' && <Footer />}
     </Container>
   );
