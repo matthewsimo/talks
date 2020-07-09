@@ -1,93 +1,4 @@
-const maybe = {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  initialColorModeName: 'light',
-  useColorSchemeMediaQuery: true,
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#07c',
-    secondary: '#609',
-    modes: {
-      dark: {
-        text: '#fff',
-        background: '#222',
-        primary: '#0cf',
-        secondary: '#90c',
-      },
-    },
-  },
-  fontSizes: [14, 18, 24, 32, 36, 42, 50, 64, 96],
-  fontWeights: {
-    body: 300,
-    heading: 700,
-    bold: 800,
-  },
-  lineHeights: {
-    body: 1.32,
-    heading: 1.125,
-  },
-  letterSpacings: {
-    body: '-0.014em',
-    heading: '-0.022em',
-  },
-  fonts: {
-    body: "'Inter', sans-serif",
-    heading: 'inherit',
-    variable: "'Inter var', sans-serif",
-    monospace: 'Menlo, monospace',
-  },
-  text: {
-    default: {
-      color: 'text',
-      fontSize: [1, 2, null],
-      fontWeight: 'body',
-    },
-    heading: {
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
-  },
-  styles: {
-    root: {
-      fontFamily: 'body',
-      color: 'text',
-      bg: 'background',
-    },
-    h1: {
-      variant: 'text.heading',
-      fontSize: [5, 6, 7],
-    },
-    h2: {
-      variant: 'text.heading',
-      fontSize: [4, 5, 6],
-    },
-    h3: {
-      variant: 'text.heading',
-      fontSize: [3, 4, 5],
-    },
-    h4: {
-      variant: 'text.heading',
-      fontSize: [2, 3, 4],
-    },
-    h5: {
-      variant: 'text.heading',
-      fontSize: [1, 2, 3],
-    },
-    h6: {
-      variant: 'text.heading',
-      fontSize: [0, 1, 2],
-    },
-    a: {
-      color: 'primary',
-      textDecoration: 'none',
-      ':hover': {
-        color: 'secondary',
-        textDecoration: 'underline',
-      },
-    },
-  },
-};
+import { alpha } from '@theme-ui/color';
 
 const makeHeadingStyle = (fontSize, letterSpacing) => {
   const heading = {
@@ -171,29 +82,36 @@ const utils = {
 export { utils };
 
 export const base = {
-  space: {
-    ...[0, 4, 8, 16, 32, 64, 128, 256, 512],
-  },
-  radii: [0, 3, 5, 8, 25],
+  initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
+
+  colors,
   fonts: {
     body: "'Inter', sans-serif",
     heading: 'inherit',
     variable: "'Inter var', sans-serif",
     monospace: 'Menlo, monospace',
   },
-  fontVariationSettings,
   fontSizes: [14, 18, 21, 24, 28, 32, 48, 64, 96],
+  fontStyles: {
+    normal: 'normal',
+    italic: 'italic',
+  },
   fontWeights: {
     body: 300,
     heading: 700,
     bold: 700,
   },
-  fontStyles: {
-    normal: 'normal',
-    italic: 'italic',
-  },
+  fontVariationSettings,
   image: {
     width: '100%',
+  },
+  images: {
+    avatar: {
+      width: [64],
+      height: [64],
+      minWidth: 'auto',
+    },
   },
   letterSpacings: {
     body: '-0.014em',
@@ -203,7 +121,23 @@ export const base = {
     body: 1.5,
     heading: 1.125,
   },
-  colors,
+  radii: [0, 3, 5, 8, 25, 999],
+  shadows: {
+    none: 'none',
+  },
+  space: {
+    ...[0, 4, 8, 16, 32, 64, 128, 256, 512],
+  },
+  text: {
+    bold: {
+      fontWeight: 'bold',
+      fontVariationSettings: 'heading-normal',
+    },
+  },
+  zIndices: {
+    ...[0, 1, 5, 10],
+    'max': 999
+  },
   layout: {
     page: {
       backgroundColor: 'background',
@@ -217,6 +151,7 @@ export const base = {
       '& > header, & > footer, & > div': {
         padding: [3, 4],
       },
+      boxShadow: `1px 2px 10px rgba(0, 0, 0, .3)`,
     },
   },
   styles: {
@@ -224,9 +159,9 @@ export const base = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      padding: [1, 2, 3],
+      padding: [2, 3, 4],
       fontSize: ['110%', '120%', '135%'],
-      backgroundColor: 'text',
+      backgroundColor: 'background',
       '@supports (font-variation-settings: normal)': {
         fontFamily: 'variable',
         fontVariationSettings: 'body-normal',
