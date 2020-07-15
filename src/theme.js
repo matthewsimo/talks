@@ -148,10 +148,6 @@ export const base = {
         `calc(100vh - ${theme.space[3] * 2}px)`,
       ],
       overflow: 'hidden',
-      '& > header, & > footer, & > div': {
-        padding: [3, 4],
-      },
-      boxShadow: `1px 2px 10px rgba(0, 0, 0, .3)`,
     },
   },
   styles: {
@@ -159,7 +155,6 @@ export const base = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      padding: [2, 3, 4],
       fontSize: ['110%', '120%', '135%'],
       backgroundColor: 'background',
       '@supports (font-variation-settings: normal)': {

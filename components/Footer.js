@@ -12,6 +12,7 @@ const Footer = () => {
         backgroundColor: (theme) => theme.colors.muted,
         borderBottomLeftRadius: 1,
         borderBottomRightRadius: 1,
+        padding: [3, 4, 5],
       }}
     >
       <Flex
