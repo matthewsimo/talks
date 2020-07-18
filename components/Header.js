@@ -1,15 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { Box, NavLink, Flex, IconButton } from 'theme-ui';
+import { useThemeUI, Box, NavLink, Flex, IconButton } from 'theme-ui';
 import { alpha } from '@theme-ui/color';
-import { Settings } from 'react-feather';
+import useScrollPosition from 'src/hooks/useScrollPosition';
+import { useSpring, animated } from 'react-spring'
+
+import ToggleColorButton from 'components/ToggleColorButton';
 
 import { utils } from 'src/theme';
 
 const Header = () => {
+  const context = useThemeUI()
+  const { theme } = context
+  const [pinned, set] = useState(false);
+  const { y } = useScrollPosition();
+
+  const [headerHeight, setHeight] = useState(0);
+  const heightRef = useCallback(header => {
+    if (header !== null) {
+      setHeight(header.getBoundingClientRect().height);
+    }
+  }, []);
+
+  const { h, s, primaryL } = theme.colors;
+  const shadowColor = `hsla(${h}, ${s}, ${primaryL}%, .25)`;
+
+  const { boxShadow, backdropFilter } = useSpring({
+    backdropFilter: pinned ? `blur(4px)` : `blur(0px)`,
+    boxShadow: pinned ? `0 0 15px 15px ${shadowColor}` : `0 0 0px 0px ${shadowColor}`,
+    from: {
+      backdropFilter: 'blur(0px)',
+      boxShadow: `0 0 0px 0px ${shadowColor}`,
+    }
+  })
+
+  if (pinned && y < headerHeight * 2) {
+    set(false);
+  } else if (!pinned && y > headerHeight * 2) {
+    set(true);
+  }
+
+  const AnimatedFlex = animated(Flex)
 
   return (
-    <Box as="header" sx={{
+    <Box as="header" ref={heightRef} sx={{
       position: "fixed",
       top: 0,
       left: 0,
@@ -18,24 +52,19 @@ const Header = () => {
       fontWeight: 'bold',
       fontVariationSettings: 'heading-normal'
     }}>
-      <Flex
+      <AnimatedFlex
         as="nav"
+        style={{
+          backdropFilter,
+          position: 'relative',
+          boxShadow: boxShadow
+        }}
         sx={{
           ...utils.inline("padding", [3, 4, 5]),
           ...utils.block("padding", [3, 3, 4]),
           alignItems: 'center',
           justifyContent: 'space-between',
-          backdropFilter: `blur(4px)`,
           backgroundColor: theme => alpha(theme.colors.background, 0.5),
-          boxShadow: theme => {
-            const shadowColor = alpha(theme.colors.secondary, .3)(theme);
-            const addOne = val => val + theme.space[1];
-            return ([
-              `0 0 ${addOne(theme.space[3])}px ${addOne(theme.space[3])}px ${shadowColor}`,
-              `0 0 ${theme.space[4]}px ${theme.space[4]}px ${shadowColor}`,
-              `0 0 ${addOne(theme.space[4])}px ${addOne(theme.space[4])}px ${shadowColor}`,
-            ])
-          },
           borderBottomColor: alpha('background', .5),
           borderBottomStyle: 'solid',
           borderBottomWidth: 1
@@ -60,6 +89,8 @@ const Header = () => {
           </Link>
         </Flex>
 
+        {/*
+
         <IconButton
           onClick={() => {
             console.log('trigger theme customizer')
@@ -68,7 +99,9 @@ const Header = () => {
         >
           <Settings />
         </IconButton>
-      </Flex>
+*/}
+        <ToggleColorButton />
+      </AnimatedFlex>
     </Box>
   );
 };
