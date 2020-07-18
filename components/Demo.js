@@ -16,7 +16,7 @@ export default () => {
   return (
     <Styled.div>
       <Styled.h2 marginTop={6}>Colors</Styled.h2>
-      <ColorPalette omit={['modes', 'header']} />
+      <ColorPalette omit={['h', 's', 'l', 'textL', 'backgroundL', 'primaryL', 'secondaryL', 'modes']} />
       <Styled.h2 sx={pt}>Typography</Styled.h2>
       <TypeStyle fontSize={7}>
         Body: <FontFamily name="body" />

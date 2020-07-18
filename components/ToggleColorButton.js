@@ -1,37 +1,41 @@
 import React from 'react';
-import { Text, Button, useColorMode } from 'theme-ui';
+import { Text, IconButton, useColorMode } from 'theme-ui';
 import { Sun, Moon } from 'react-feather';
 
 const ToggleColorButton = () => {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <Button
+    <IconButton
       sx={{
         lineHeight: 1,
         padding: 2,
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: 'muted',
-        color: 'primary',
       }}
       onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
+
+      title={colorMode === 'dark' ? "Go Light" : "Go Dark"}
     >
       {colorMode === 'dark' ? (
         <>
           <Sun />
+          { /*
           <Text pl={2} pr={2}>
             Go Light
           </Text>
+          */}
         </>
       ) : (
-        <>
-          <Moon />
+          <>
+            <Moon />
+            { /*
           <Text pl={2} pr={2}>
             Go Dark
           </Text>
-        </>
-      )}
-    </Button>
+          */ }
+          </>
+        )}
+    </IconButton>
   );
 };
 

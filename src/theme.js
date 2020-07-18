@@ -27,19 +27,32 @@ const colorScale = lightness.map((l) => getColor(l));
 //console.log({ lightness, colorScale });
 
 const colors = {
+  h: hue,
+  s: saturation,
+  l: lightness,
   ...colorScale,
   text: colorScale[0],
+  textL: lightness[0],
   background: colorScale[8],
+  backgroundL: lightness[8],
   primary: colorScale[4],
+  primaryL: lightness[4],
   secondary: colorScale[6],
+  secondaryL: lightness[6],
   muted: colorScale[7],
+  mutedL: lightness[7],
   modes: {
     dark: {
       text: colorScale[8],
+      textL: lightness[8],
       background: colorScale[0],
+      backgroundL: lightness[0],
       primary: colorScale[4],
+      primaryL: lightness[4],
       secondary: colorScale[6],
+      secondaryL: lightness[6],
       muted: colorScale[1],
+      mutedL: lightness[1],
     },
   },
 };
