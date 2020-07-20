@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'theme-ui';
-import { utils } from 'src/theme';
+import { utils } from 'lib/theme';
 
 const Icon = ({ title, link, ...props }) => {
   return (

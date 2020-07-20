@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Avatar, Heading, Flex, Box, Text } from 'theme-ui';
+import { Link as ThemeLink, Avatar, Flex, Box, Text } from 'theme-ui';
 import Icon from 'components/Icon';
-import { utils } from 'src/theme';
+import { utils } from 'lib/theme';
 
 const Footer = () => {
   return (
@@ -51,22 +51,23 @@ const Footer = () => {
             ...utils.block('padding', [2, 3, 4]),
           }}
         >
-          <Heading as="h4">Here</Heading>
-          <Link href="/about">
-            <a>About</a>
+          <Link href="/about" passHref>
+            <ThemeLink>About</ThemeLink>
           </Link>
-          <Link href="/words">
-            <a>Words</a>
+          <Link href="/posts" passHref>
+            <ThemeLink>Posts</ThemeLink>
           </Link>
-          <Link href="/experiments">
-            <a>Experiments</a>
+          <Link href="#" passHref>
+            <ThemeLink title="Coming soon!">Labs</ThemeLink>
           </Link>
+          { /** 
           <Link href="/colophon">
             <a>Colophon</a>
           </Link>
           <Link href="/">
             <a>RSS</a>
           </Link>
+*/}
         </Flex>
         <Flex
           as="nav"
@@ -76,28 +77,25 @@ const Footer = () => {
             ...utils.block('padding', [2, 3, 4]),
           }}
         >
-          <Heading as="h4">Elsewhere</Heading>
+          { /**
           <Link href="/">
             <a>Email</a>
           </Link>
-          <Link href="/">
-            <a>Twitter</a>
-          </Link>
-          <Link href="/">
-            <a>GitHub</a>
-          </Link>
-          <Link href="/">
-            <a>LinkedIn</a>
-          </Link>
+          */}
+          <ThemeLink href="https://twitter.com/matthewsimo/">
+            Twitter
+          </ThemeLink>
+          <ThemeLink href="https://github.com/matthewsimo">
+            GitHub
+          </ThemeLink>
+          <ThemeLink href="https://www.linkedin.com/in/matthewsimo/">
+            LinkedIn
+          </ThemeLink>
         </Flex>
       </Flex>
       <Box sx={{ mt: [2, 3, 4] }}>
         <Text as="small">
-          &copy; {new Date().getFullYear()} Matthew Simo. Inspire.{' '}
-          <Link href="/">
-            <a>Attribute</a>
-          </Link>
-          . Be cool. &hearts;
+          &copy; {new Date().getFullYear()} Matthew Simo. Inspire. Attribute. Be cool. &hearts;
           <Text as="span" sx={{ display: 'block' }}>
             <Icon
               title="Texas Icon - Icon made by Good Ware from www.flaticon.com"

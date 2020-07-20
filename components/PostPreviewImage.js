@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Image } from 'theme-ui';
-import { utils } from 'src/theme';
+import { utils } from 'lib/theme';
 /*
         ':before': {
           content: '""',

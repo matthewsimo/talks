@@ -2,48 +2,33 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useThemeUI, Box, NavLink, Flex, IconButton } from 'theme-ui';
 import { alpha } from '@theme-ui/color';
-import useScrollPosition from 'src/hooks/useScrollPosition';
-import { useSpring, animated } from 'react-spring'
+import useScrollPosition from 'hooks/useScrollPosition';
 
 import ToggleColorButton from 'components/ToggleColorButton';
 
-import { utils } from 'src/theme';
+import { utils } from 'lib/theme';
 
 const Header = () => {
   const context = useThemeUI()
   const { theme } = context
-  const [pinned, set] = useState(false);
+  const [pinned, setPinned] = useState(false);
   const { y } = useScrollPosition();
 
-  const [headerHeight, setHeight] = useState(0);
-  const heightRef = useCallback(header => {
-    if (header !== null) {
-      setHeight(header.getBoundingClientRect().height);
-    }
-  }, []);
-
-  const { h, s, primaryL } = theme.colors;
-  const shadowColor = `hsla(${h}, ${s}, ${primaryL}%, .25)`;
-
-  const { boxShadow, backdropFilter } = useSpring({
-    backdropFilter: pinned ? `blur(4px)` : `blur(0px)`,
-    boxShadow: pinned ? `0 0 15px 15px ${shadowColor}` : `0 0 0px 0px ${shadowColor}`,
-    from: {
-      backdropFilter: 'blur(0px)',
-      boxShadow: `0 0 0px 0px ${shadowColor}`,
-    }
-  })
-
-  if (pinned && y < headerHeight * 2) {
-    set(false);
-  } else if (!pinned && y > headerHeight * 2) {
-    set(true);
+  if (pinned && y === 0) {
+    setPinned(false);
+  } else if (!pinned && y > 0) {
+    setPinned(true);
   }
 
-  const AnimatedFlex = animated(Flex)
+  const { h, s, primaryL: l } = theme.colors;
+  const shadowColor = `hsla(${h}, ${s}, ${l}%, .25)`;
+  const { boxShadow, backdropFilter } = {
+    backdropFilter: pinned ? `blur(4px)` : `blur(0px)`,
+    boxShadow: pinned ? `0 0 15px 15px ${shadowColor}` : `0 0 0px 0px ${shadowColor}`,
+  };
 
   return (
-    <Box as="header" ref={heightRef} sx={{
+    <Box as="header" sx={{
       position: "fixed",
       top: 0,
       left: 0,
@@ -52,22 +37,35 @@ const Header = () => {
       fontWeight: 'bold',
       fontVariationSettings: 'heading-normal'
     }}>
-      <AnimatedFlex
+      <Flex
         as="nav"
-        style={{
-          backdropFilter,
-          position: 'relative',
-          boxShadow: boxShadow
-        }}
         sx={{
           ...utils.inline("padding", [3, 4, 5]),
           ...utils.block("padding", [3, 3, 4]),
           alignItems: 'center',
           justifyContent: 'space-between',
-          backgroundColor: theme => alpha(theme.colors.background, 0.5),
-          borderBottomColor: alpha('background', .5),
-          borderBottomStyle: 'solid',
-          borderBottomWidth: 1
+          position: 'relative',
+          '&:after': {
+            content: "''",
+            display: 'block',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: theme => alpha(theme.colors.background, 0.5),
+            borderBottomColor: alpha('background', .5),
+            borderBottomStyle: 'solid',
+            borderBottomWidth: 1,
+            boxShadow,
+            backdropFilter,
+            opacity: pinned ? 1 : 0,
+            transitionProperty: 'opacity',
+            transitionDuration: '.3s',
+            transitionDelay: '.05s',
+            transitionTimingFunction: 'ease-in-out',
+            zIndex: -1
+          }
         }}
       >
         <Flex
@@ -81,7 +79,7 @@ const Header = () => {
           <Link href="/" passHref>
             <NavLink>Matthew Simo</NavLink>
           </Link>
-          <Link href="/about" passHref>
+          <Link href="/" passHref>
             <NavLink>About</NavLink>
           </Link>
           <Link href="/posts" passHref>
@@ -101,7 +99,7 @@ const Header = () => {
         </IconButton>
 */}
         <ToggleColorButton />
-      </AnimatedFlex>
+      </Flex>
     </Box>
   );
 };
