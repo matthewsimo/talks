@@ -6,13 +6,15 @@ import { utils } from 'lib/theme';
 
 const Footer = () => {
   return (
-    <Box
+    <Flex
       as={'footer'}
       sx={{
         backgroundColor: (theme) => theme.colors.muted,
         borderBottomLeftRadius: 1,
         borderBottomRightRadius: 1,
         padding: [3, 4, 5],
+        flexDirection: ['column', 'row'],
+        flexWrap: 'wrap',
       }}
     >
       <Flex
@@ -20,12 +22,11 @@ const Footer = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'start',
-          borderBottomWidth: 1,
-          borderBottomStyle: 'solid',
-          borderBottomColor: (theme) => theme.colors[6],
           pt: [2, 3],
-          pb: [3, 4],
+          pb: [3, 2],
+          pr: [0, 3],
           mb: [3, 4],
+          maxWidth: ['100%', '60%'],
         }}
       >
         <Avatar sx={{ mr: [2, 3, 4], mt: 1 }} src="/matthewsimo-avatar.jpg" />
@@ -40,7 +41,10 @@ const Footer = () => {
       <Flex
         sx={{
           flexDirection: ['row'],
-          justifyContent: 'space-between',
+          justifyContent: ['space-between', 'space-around'],
+          width: ['100%', '40%'],
+          paddingLeft: [0, 4],
+          mb: [4, 0]
         }}
       >
         <Flex
@@ -48,7 +52,8 @@ const Footer = () => {
           sx={{
             flex: '1 1 45%',
             flexDirection: 'column',
-            ...utils.block('padding', [2, 3, 4]),
+            ...utils.block('padding', [2, 3]),
+            ...utils.inline('padding', 2),
           }}
         >
           <Link href="/about" passHref>
@@ -74,7 +79,8 @@ const Footer = () => {
           sx={{
             flex: '1 1 45%',
             flexDirection: 'column',
-            ...utils.block('padding', [2, 3, 4]),
+            ...utils.block('padding', [2, 3]),
+            ...utils.inline('padding', 2),
           }}
         >
           { /**
@@ -93,7 +99,7 @@ const Footer = () => {
           </ThemeLink>
         </Flex>
       </Flex>
-      <Box sx={{ mt: [2, 3, 4] }}>
+      <Box sx={{ mt: [2, 3, 4], flexBasis: '100%' }}>
         <Text as="small">
           &copy; {new Date().getFullYear()} Matthew Simo. Inspire. Attribute. Be cool. &hearts;
           <Text as="span" sx={{ display: 'block' }}>
@@ -107,7 +113,7 @@ const Footer = () => {
           </Text>
         </Text>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 
