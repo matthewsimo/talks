@@ -11,6 +11,7 @@ const ToggleColorButton = () => {
         padding: 2,
         display: 'flex',
         alignItems: 'center',
+        cursor: 'pointer'
       }}
       onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
 
