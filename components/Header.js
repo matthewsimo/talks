@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { useThemeUI, Box, NavLink, Flex, IconButton } from 'theme-ui';
+import { useColorMode, useThemeUI, Box, NavLink, Flex, IconButton } from 'theme-ui';
 import { alpha } from '@theme-ui/color';
 import useScrollPosition from 'hooks/useScrollPosition';
 
@@ -11,6 +11,7 @@ import { utils } from 'lib/theme';
 const Header = () => {
   const context = useThemeUI()
   const { theme } = context
+  const [colorMode, _] = useColorMode();
   const [pinned, setPinned] = useState(false);
   const { y } = useScrollPosition();
 
@@ -72,7 +73,8 @@ const Header = () => {
           sx={{
             '& > a': {
               mr: [3, 4],
-              p: 1
+              p: 1,
+              textShadow: utils.getTextShadowForTone(colorMode, { dark: 'darkHeader', light: 'lightHeader' }),
             },
           }}
         >
