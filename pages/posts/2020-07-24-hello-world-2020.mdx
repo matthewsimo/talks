@@ -4,9 +4,13 @@ export const meta = {
   title: 'Hello World, 2020',
   id: '001',
 };
-
+import Head from 'next/head';
 import { Heading, Image, Box, Styled } from 'theme-ui';
 import { utils } from 'lib/theme';
+
+<Head>
+  <title>Matthew Simo | {meta.title}</title>
+</Head>
 
 <Box
   sx={{
