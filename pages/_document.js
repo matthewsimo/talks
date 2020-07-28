@@ -10,11 +10,7 @@ export default class extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Matthew Simo</title>
-          <meta name="description" content="Personal Site of Matthew Simo -- Software Engineer & UX Designer" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
+        <Head />
         <body>
           <InitializeColorMode />
           <Main />
