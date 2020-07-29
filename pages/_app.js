@@ -16,12 +16,8 @@ export default class App extends NextApp {
           <title>Matthew Simo</title>
           <meta name="description" content="Personal Site of Matthew Simo -- Software Engineer & UX Designer" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></link>
         </Head>
-        <Global
-          styles={css`
-            @import url('https://rsms.me/inter/inter.css');
-          `}
-        />
         <Layout {...this.props}>
           <Component {...pageProps} />
         </Layout>
