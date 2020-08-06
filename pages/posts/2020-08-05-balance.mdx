@@ -1,0 +1,45 @@
+export const meta = {
+  date: '2020-08-05',
+  slug: '2020-08-05-balance',
+  title: 'Balance',
+  id: '002',
+  draft: true,
+};
+
+import Head from 'next/head';
+import { Heading, Image, Box, Styled } from 'theme-ui';
+import PostIntro from 'components/PostIntro';
+
+<Head>
+  <title>Matthew Simo | {meta.title}</title>
+</Head>
+
+<PostIntro
+  title={meta.title}
+  meta={`${meta.date} | ${meta.id}`}
+  src="https://images.unsplash.com/photo-1525893503059-d105fd41f0b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80"
+  tone="light"
+/>
+
+I've been working remote since the very start of my career, nearly 15 years now. During that time, I've learned a lot about how to do that the right way and the wrong way. I want to share some tips and strategies to help everyone as the world deals with the effects of the pandemic. This is what I've found works for me, it goes without saying but your milage may vary.
+
+- Dedicated work space
+- Breaks, water & stretches
+- Music
+- set timers
+- set expectations
+
+<Box sx={{ paddingTop: [3, 4, 5] }}>
+  <small>
+    <span>
+      Photo by{' '}
+      <a href="https://unsplash.com/@ralics?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        Christopher Rusev
+      </a>{' '}
+      on{' '}
+      <a href="https://unsplash.com/s/photos/balance?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        Unsplash
+      </a>
+    </span>
+  </small>
+</Box>
