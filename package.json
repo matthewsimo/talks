@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "b:posts": "node lib/posts.mjs"
+    "start": "next start"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.1",

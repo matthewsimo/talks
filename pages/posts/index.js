@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Link as ThemeLink, Heading, Box, Text } from 'theme-ui';
 
-import postsData from 'lib/posts.json';
+import { getPosts } from 'lib/posts';
 import { utils } from 'lib/theme';
 
 function Posts({ posts }) {
@@ -19,12 +19,18 @@ function Posts({ posts }) {
               >
                 <ThemeLink>{post.title}</ThemeLink>
               </Link>
-              {" "} - <time dateTime={post.date}>{post.date}</time>
+              {post.date && (
+                <>
+                  {" "}
+                  <Text as="time" dateTime={post.date}>{post.date}</Text>
+                </>
+              )}
             </Text>
           ))}
         </Box>
-      )}
-    </Box>
+      )
+      }
+    </Box >
   )
 
 }
@@ -32,7 +38,8 @@ function Posts({ posts }) {
 export default Posts;
 
 export async function getStaticProps() {
+  const posts = await getPosts();
   return {
-    props: { posts: postsData },
+    props: { posts },
   }
 }
