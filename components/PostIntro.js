@@ -1,11 +1,7 @@
 import { Box, Heading, useColorMode } from 'theme-ui';
 import { utils } from 'lib/theme';
-//const getStaticColor = ({dark, light}) => {
-//
-//};
 
-
-const PostIntro = ({ src, title, meta, tone = 'dark' }) => {
+const PostIntro = ({ sx = {}, src, title, meta, tone = 'dark', imgSizing = 'cover' }) => {
   const [colorMode, _] = useColorMode();
 
   const textShadow = utils.getTextShadowForTone(tone, { dark: 'darkTitle', light: 'lightTitle' });
@@ -38,11 +34,12 @@ const PostIntro = ({ src, title, meta, tone = 'dark' }) => {
         backgroundImage:
           `url(${src})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundSize: imgSizing,
         backgroundPosition: 'center center',
         display: ['flex', 'block'],
         flexDirection: 'column',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        ...sx
       }}
     >
 
