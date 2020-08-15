@@ -11,7 +11,7 @@ import {
 
 import Lorem from 'components/Lorem.mdx';
 
-export default () => {
+const Demo = () => {
   const pt = { mt: 7 };
   return (
     <Styled.div>
@@ -71,3 +71,5 @@ export default () => {
     </Styled.div>
   );
 };
+
+export default Demo;
