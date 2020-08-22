@@ -1,30 +1,12 @@
-export const meta = {
-  date: '2020-08-11',
-  slug: '2020-08-11-month-of-lessons-benjamin',
-  title: 'A Month of Lessons: Benjamin',
-  id: '003',
-};
+---
+id: '003'
+title: 'A Month of Lessons: Benjamin'
+img: '/assets/img/benjamin-simo-one-month.jpg'
+tone: 'light'
+---
 
-import Head from 'next/head';
-import { Heading, Image, Box, Styled } from 'theme-ui';
+import { Box } from 'theme-ui';
 import { utils } from 'lib/theme';
-import PostIntro from 'components/PostIntro';
-import DebugTheme from 'components/DebugTheme';
-
-<Head>
-  <title>Matthew Simo | {meta.title}</title>
-</Head>
-
-<PostIntro
-  title={meta.title}
-  meta={`${meta.date} | ${meta.id}`}
-  src="/assets/img/benjamin-simo-one-month.jpg"
-  imgSizing="contain"
-  sx={{
-    backgroundColor: 7,
-  }}
-  tone="light"
-/>
 
 My wife, Vy, and I had our first child on June 30th. His name is Benjamin Ender Simo and he is absolutely perfect. It's definitely been an adjustment but it's a more fulfilling time than I could have imagined.
 
@@ -40,7 +22,7 @@ OK, with that out of the way - in no particular order..
 
 <Box sx={{
   ' & > blockquote': {
-  ...utils.block('margin', 6)
+    ...utils.block('margin', 6)
   }
 }}>
 

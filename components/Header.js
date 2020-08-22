@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useColorMode, useThemeUI, Box, NavLink, Flex, IconButton } from 'theme-ui';
 import { alpha } from '@theme-ui/color';
@@ -21,12 +21,13 @@ const Header = () => {
     setPinned(true);
   }
 
+  useEffect(() => {
+    setPinned(window.pageYOffset > 0);
+  })
+
   const { h, s, primaryL: l } = theme.colors;
   const shadowColor = `hsla(${h}, ${s}, ${l}%, .25)`;
-  const { boxShadow, backdropFilter } = {
-    backdropFilter: pinned ? `blur(4px)` : `blur(0px)`,
-    boxShadow: pinned ? `0 0 15px 15px ${shadowColor}` : `0 0 0px 0px ${shadowColor}`,
-  };
+  const opacity = pinned ? 1 : 0;
 
   return (
     <Box as="header" sx={{
@@ -58,9 +59,9 @@ const Header = () => {
             borderBottomColor: alpha('background', .5),
             borderBottomStyle: 'solid',
             borderBottomWidth: 1,
-            boxShadow,
-            backdropFilter,
-            opacity: pinned ? 1 : 0,
+            boxShadow: `0 0 15px 15px ${shadowColor}`,
+            backdropFilter: 'blur(4px)',
+            opacity,
             transitionProperty: 'opacity',
             transitionDuration: '.3s',
             transitionDelay: '.05s',
