@@ -101,7 +101,7 @@ const Footer = () => {
       </Flex>
       <Box sx={{ mt: [2, 3, 4], flexBasis: '100%' }}>
         <Text as="small">
-          &copy; {new Date().getFullYear()} Matthew Simo. Inspire. Attribute. Be cool. &hearts;
+          &copy; {new Date().getFullYear()} Matthew Simo. Learn. Share. Attribute. Be nice. &hearts;
           <Text as="span" sx={{ display: 'block' }}>
             <Icon
               title="Texas Icon - Icon made by Good Ware from www.flaticon.com"

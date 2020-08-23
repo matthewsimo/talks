@@ -1,26 +1,33 @@
 import Head from 'next/head';
-import { BaseStyles } from 'theme-ui';
+import { Box } from 'theme-ui';
 import { utils } from 'lib/posts';
 
 import PostIntro from 'components/PostIntro';
 
 export default function Layout(meta) {
   return ({ children: content }) => {
+    const hasMeta = meta.title && meta.id && meta.img;
     return (
       <div>
         <Head>
-          <title>{meta.id} - {meta.title} | Matthew Simo</title>
+          <title>{hasMeta && `${meta.id} - ${meta.title} | `}Matthew Simo</title>
         </Head>
 
-        <PostIntro
-          title={meta.title}
-          meta={`${utils.getDate(meta)} | ${meta.id}`}
-          src={meta.img}
-          tone={meta.tone}
-        />
-        <BaseStyles>
-          {content}
-        </BaseStyles>
+        {hasMeta ? (
+          <>
+            <PostIntro
+              title={meta.title}
+              meta={`${utils.getDate(meta)} | ${meta.id}`}
+              src={meta.img}
+              tone={meta.tone}
+            />
+            {content}
+          </>
+        ) : (
+            <Box pt="6">
+              {content}
+            </Box>
+          )}
       </div>
     )
   }
