@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { BaseStyles } from 'theme-ui';
 import { utils } from 'lib/posts';
 
 import PostIntro from 'components/PostIntro';
@@ -17,7 +18,9 @@ export default function Layout(meta) {
           src={meta.img}
           tone={meta.tone}
         />
-        {content}
+        <BaseStyles>
+          {content}
+        </BaseStyles>
       </div>
     )
   }
