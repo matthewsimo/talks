@@ -21,12 +21,7 @@ export default function PostIntro({ post }) {
   }, []);
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      `--scroll-position-blur`,
-      `${0}px`
-    );
-
-    document.documentElement.style.setProperty(`--scroll-modifier`, `${0.6}`);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
