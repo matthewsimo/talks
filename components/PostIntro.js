@@ -3,6 +3,16 @@ import Heading from './Heading';
 import format from 'date-fns/format';
 
 export default function PostIntro({ post }) {
+  const [opacityValue, setOpacityValue] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpacityValue(100);
+    }, 50);
+
+    return () => setOpacityValue(0);
+  }, []);
+
   const handleScroll = useCallback((e) => {
     const { scrollY, innerHeight } = window;
     const modifier =
@@ -27,12 +37,14 @@ export default function PostIntro({ post }) {
   }, []);
 
   const [Y, M, D] = post.date.split('-');
-  const postDate = format(new Date(Y, M, D), 'MMMM d, yyyy');
+  const postDate = format(new Date(Y, M - 1, D), 'MMMM d, yyyy');
 
   return (
     <>
       <div className="relative w-full h-screen max-h-screen -mt-40 px-6 sm:px-8 md:px-10 lg:px-16 flex items-center justify-center overflow-scroll">
-        <div className="relative grid grid-cols-6 grid-row-2 text-main border-4 border-main z-10 shadow-lg backdrop-blur-lg sm:max-w-3/4 pr-4">
+        <div
+          className={`opacity-${opacityValue} transition-opacity duration-700 ease-in-out relative grid grid-cols-6 grid-row-2 text-main border-4 border-main z-10 shadow-lg backdrop-blur-lg sm:max-w-3/4 pr-4`}
+        >
           <div className="row-span-2 col-span-1 flex items-center justify-center mr-4 border-r-4 border-main">
             <span className=" -rotate-90 transform-gpu relative inline-block font-bold leading-relaxed tracking-widest text-xl">
               {post.id}
