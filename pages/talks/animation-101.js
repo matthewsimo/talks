@@ -74,7 +74,7 @@ export default function Animation() {
 
         <Slide>
           <Heading>Extra Feedback</Heading>
-          <blockquote classname="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed">
+          <blockquote className="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed">
             <em className="text-main">Feedback:</em> indication that an action
             was initiated, completed, or is newly possible.
           </blockquote>
