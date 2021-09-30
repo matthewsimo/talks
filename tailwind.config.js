@@ -25,68 +25,75 @@ const colorScale = () => {
 
 const defaultStyle = {
   color: color(0),
-  fontWeight: '400',
+  fontWeight: '400'
 };
 
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './_posts/**/*.mdx'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       backdropBlur: {
-        scroll: 'var(--scroll-position-blur)',
+        scroll: 'var(--scroll-position-blur)'
       },
       opacity: {
-        scroll: `var(--scroll-modifier)`,
+        scroll: `var(--scroll-modifier)`
       },
       margin: {
         '-container': 'calc((-1 * (100vw - 1024px) / 2) - 4rem)',
-        '-container+p': 'calc((-1 * (100vw - 1280px) / 2) + 4rem)',
+        '-container+p': 'calc((-1 * (100vw - 1280px) / 2) + 4rem)'
       },
       maxWidth: {
         '1/4': '25%',
         '1/2': '50%',
-        '3/4': '75%',
+        '3/4': '75%'
       },
       flex: {
-        '1/2': '1 1 50%',
+        '1/2': '1 1 50%'
       },
       fontFamily: {
         sans: [`'Inter'`, ...defaultTheme.fontFamily.sans],
-        inherit: `inherit`,
+        inherit: `inherit`
       },
       colors: {
         main: {
           ...colorScale(),
           primary: colorWithOpacity(4),
-          muted: colorWithOpacity(7),
-        },
+          muted: colorWithOpacity(7)
+        }
       },
       textColor: {
         main: {
-          DEFAULT: colorWithOpacity(0),
-        },
+          DEFAULT: colorWithOpacity(0)
+        }
       },
       borderColor: {
         main: {
-          DEFAULT: colorWithOpacity(0),
-        },
+          DEFAULT: colorWithOpacity(0)
+        }
       },
       backgroundColor: {
         main: {
-          DEFAULT: colorWithOpacity(8),
-        },
+          DEFAULT: colorWithOpacity(8)
+        }
       },
       ringColor: {
         main: {
-          DEFAULT: colorWithOpacity(3),
-        },
+          DEFAULT: colorWithOpacity(3)
+        }
       },
       ringOffsetColor: {
         main: {
-          DEFAULT: colorWithOpacity(8),
-        },
+          DEFAULT: colorWithOpacity(8)
+        }
+      },
+      rotate: {
+        720: '720deg'
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -98,12 +105,12 @@ module.exports = {
               textDecoration: 'none',
               '&:hover': {
                 color: color(3),
-                textDecoration: 'underline',
+                textDecoration: 'underline'
               },
               '&:focus': {
                 color: color(3),
-                textDecoration: 'underline',
-              },
+                textDecoration: 'underline'
+              }
             },
             'small a': {
               color: color(2),
@@ -111,67 +118,67 @@ module.exports = {
               fontWeight: 'inherit',
               '&:hover': {
                 color: color(1),
-                textDecoration: 'underline',
+                textDecoration: 'underline'
               },
               '&:focus': {
                 color: color(1),
-                textDecoration: 'underline',
-              },
+                textDecoration: 'underline'
+              }
             },
             code: {
               color: color(3),
-              fontFamily: defaultTheme.fontFamily.mono,
+              fontFamily: defaultTheme.fontFamily.mono
             },
             pre: {
               backgroundColor: color(7, 0.5),
               color: color(3),
-              fontFamily: defaultTheme.fontFamily.mono,
+              fontFamily: defaultTheme.fontFamily.mono
             },
             h1: {
               ...defaultStyle,
               fontSize: '3rem',
               lineHeight: 1,
-              letterSpacing: '-0.05em',
+              letterSpacing: '-0.05em'
             },
             h2: {
               ...defaultStyle,
               fontSize: '2.25rem',
               lineHeight: 1.625,
-              letterSpacing: '-0.05em',
+              letterSpacing: '-0.05em'
             },
             h3: {
               ...defaultStyle,
               fontSize: '1.875rem',
               lineHeight: 1.625,
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.025em'
             },
             h4: {
               ...defaultStyle,
               fontSize: '1.5rem',
               lineHeight: 1.625,
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.025em'
             },
             h5: {
               ...defaultStyle,
               fontSize: '1.25rem',
               lineHeight: 1.5,
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.025em'
             },
             blockquote: {
               ...defaultStyle,
-              borderColor: color(5, 0.5),
+              borderColor: color(5, 0.5)
             },
             strong: {
               ...defaultStyle,
-              fontWeight: 700,
+              fontWeight: 700
             },
             'ol > li:before': {
-              color: color(1, 0.75),
+              color: color(1, 0.75)
             },
             'ul > li:before': {
-              backgroundColor: color(1, 0.75),
-            },
-          },
+              backgroundColor: color(1, 0.75)
+            }
+          }
         },
         lg: {
           css: {
@@ -179,46 +186,46 @@ module.exports = {
               ...defaultStyle,
               fontSize: '4.5rem',
               lineHeight: 1,
-              letterSpacing: '-0.05em',
+              letterSpacing: '-0.05em'
             },
             h2: {
               ...defaultStyle,
               fontSize: '3.75rem',
               lineHeight: 1,
-              letterSpacing: '-0.05em',
+              letterSpacing: '-0.05em'
             },
             h3: {
               ...defaultStyle,
               fontSize: '3rem',
               lineHeight: 1,
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.025em'
             },
             h4: {
               ...defaultStyle,
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.025em'
             },
             h5: {
               ...defaultStyle,
               fontSize: '1.875rem',
               lineHeight: '2.25rem',
-              letterSpacing: '-0.025em',
-            },
-          },
-        },
-      }),
-    },
+              letterSpacing: '-0.025em'
+            }
+          }
+        }
+      })
+    }
   },
   variants: {
     extend: {
       textColor: ['selection'],
-      backgroundColor: ['selection'],
-    },
+      backgroundColor: ['selection']
+    }
   },
   plugins: [
     require('tailwindcss-selection-variant'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-  ],
+    require('@tailwindcss/typography')
+  ]
 };
