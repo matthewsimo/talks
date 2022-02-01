@@ -20,7 +20,7 @@ Cons:
 
 One issue I ran into was having Storybook & Stitches play nice with each other. This is sad because, in my mind, they are both component-driven tooling that have a strong focus on DX.
 
-This is actually quite common, I've been lurking in the Stitches discord and have seen this question come up a number of times in just a month. There are some [old tickets and discussions](https://github.com/modulz/stitches/discussions/213) that I took and modified for this solution. Your mileage may vary, but I hope it helps you.
+This is actually quite common, I've been lurking in the Stitches discord and have seen this question come up a number of times in just a month. There are some [old tickets and discussions](https://github.com/modulz/stitches/discussions/213) that I took and modified for this solution. 
 
 The long and short of it is that Stitches' `Styled` component's `as` & `css` props are _too_ flexible for Storybook to make sense of and just "do the right thing" when rendering controls for the variants and props of a component.
 
@@ -105,7 +105,7 @@ Default.args = {
 };
 ```
 
-And that's it, Storybook should now properly interpret the variants and properly render knobs accordingly for your component.
+And that's it, Storybook should now properly interpret the variants and properly render knobs accordingly for your component. Your mileage may vary, but I hope it helps you - good luck!
 
 
 <ImageAttribution>Photo by <a href="https://unsplash.com/@purzlbaum?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Claudio Schwarz</a> on <a href="https://unsplash.com/s/photos/handshake?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></ImageAttribution>
