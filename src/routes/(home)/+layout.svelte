@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Backdrop from '$lib/backdrop.svelte';
+	import Backdrop from '$lib/Backdrop.svelte';
 </script>
 
 <Backdrop>

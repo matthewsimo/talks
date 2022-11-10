@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Backdrop from '$lib/backdrop.svelte';
-	import Header from '$lib/header.svelte';
-	import Footer from '$lib/footer.svelte';
+	import Backdrop from '$lib/Backdrop.svelte';
+	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <Backdrop>

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { anchorClass, codeClass, fullBleedClass, gridClass } from '$lib/classes';
-	import ExternalLink from '$lib/external-link.svelte';
-	import { waitFor } from '$lib/utils';
 	import { fly } from 'svelte/transition';
-	import Clients from './clients.svelte';
+	import { anchorClass, codeClass, gridClass } from '$lib/classes';
+	import { waitFor } from '$lib/utils';
+	import ExternalLink from '$lib/ExternalLink.svelte';
+	import Clients from './Clients.svelte';
 
 	let copyMsg: false | 'Success' | 'Error' = false;
 
@@ -76,7 +76,7 @@
 			<li>
 				GitHub:
 				<ExternalLink classes={anchorClass} href={`http://github.com/${username}`}
-					>/{username}
+					>{username}
 				</ExternalLink>
 			</li>
 			<li>

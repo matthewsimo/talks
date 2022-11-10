@@ -1,11 +1,9 @@
 <script lang="ts">
-	import Texas from '$lib/icons/texas.svelte';
+	import Texas from '$lib/icons/Texas.svelte';
 	import { anchorClass, gridClass } from './classes';
-
-	const dividerClass = `before:content-[''] before:block before:relative before:col-start-2 before:-top-12 before:border-b before:border-b-main-100/20 before:h-1 before:rounded-sm before:w-full before:mx-auto before:bg-main-900`;
 </script>
 
-<footer class={`pt-12 pb-20 ${gridClass} ${dividerClass}`}>
+<footer class={`pt-16 pb-20 ${gridClass}`}>
 	<small
 		>&copy; <a class={anchorClass} href="/about">Matthew Simo</a>
 		{new Date().getFullYear()} &mdash; Made in Texas

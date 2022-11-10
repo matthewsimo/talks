@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { gridClass } from '$lib/classes';
+	import Section from './Section.svelte';
+	import { usesData } from './data';
 </script>
 
 <article class={gridClass}>
-	<h1 class="text-4xl font-semibold ">Uses</h1>
+	<div class="pb-8 space-y-8">
+		<h1 class="text-4xl font-semibold ">Uses</h1>
 
-	<p>Here's a breakdown of the tools and stuff I use day-to-day.</p>
+		<p class="text-lg">Here's a breakdown of the tools and stuff I use day-to-day.</p>
+	</div>
 
-	<dl>
-		<dt>14" M1 MacBook Pro</dt>
-		<dd>
-			My personal laptop, wonderfully productive device plugged into multiple monitors or mobile.
-		</dd>
-	</dl>
+	{#each usesData as section}
+		<Section title={section.title} items={section.items} />
+	{/each}
 </article>
