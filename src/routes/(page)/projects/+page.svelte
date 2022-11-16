@@ -7,7 +7,7 @@
 	const projects = [
 		{
 			title: 'GART',
-			link: 'http://gart.matthewsimo.com/curve',
+			link: 'http://gart.matthewsimo.com',
 			desc: 'My simple generative art/creative coding environment built on sveltekit',
 			source: 'https://github.com/matthewsimo/gart',
 			img: undefined
@@ -52,27 +52,25 @@
 			<li
 				class="space-y-2 p-4 hover:bg-gradient-to-br hover:from-main-700/20 hover:to-main-800/20 rounded"
 			>
-				<div class="flex flex-row justify-start flex-wrap gap-2 items-center">
-					<h2 class="text-xl font-semibold inline-block">
-						{#if link}
-							<a class={`${anchorClass} inline-block`} href={link}>
-								{title}
-							</a>
-						{:else}
-							{title}
-						{/if}
-					</h2>
-					{#if link}
-						<a class={`${anchorClass} inline-block`} href={link} title={`Visit ${title}`}>
-							<Link classes="inline-block " />
-						</a>
-					{/if}
-
-					{#if source}
-						<a class={anchorClass} href={source} title={`Source Code for ${title}`}><Code /></a>
-					{/if}
-				</div>
+				<h2 class="text-xl font-semibold inline-block">
+					{title}
+				</h2>
 				<p class="">{desc}</p>
+				<footer class="pt-4">
+					<small class="text-sm flex flex-row justify-start flex-wrap gap-4 items-center">
+						{#if link}
+							<a class={`${anchorClass} inline-block`} href={link} title={`Visit ${title}`}>
+								<Link classes="inline-block " /> Site
+							</a>
+						{/if}
+
+						{#if source}
+							<a class={anchorClass} href={source} title={`Source Code for ${title}`}>
+								<Code classes="inline-block" /> Source
+							</a>
+						{/if}
+					</small>
+				</footer>
 			</li>
 		{/each}
 	</ul>
