@@ -3,7 +3,7 @@
 </script>
 
 <svg
-	class={classes}
+	class={`${classes} w-[1.25rem]`}
 	width="24"
 	height="24"
 	viewBox="0 0 24 24"

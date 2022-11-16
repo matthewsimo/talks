@@ -1,4 +1,13 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script lang="ts">
+	export let classes = '';
+</script>
+
+<svg
+	class={`${classes} w-[1.25rem]`}
+	viewBox="0 0 24 24"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<g>
 		<path
 			id="Mask"
