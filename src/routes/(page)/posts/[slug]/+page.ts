@@ -1,42 +1,36 @@
-// import type { PageLoad } from './$types';
-// import { error } from '@sveltejs/kit';
-// import readingTime from 'reading-time';
+import type { PageLoad } from './$types';
+import { type Post, getDateAndSlug } from '../+page';
+import { error } from '@sveltejs/kit';
+import { readingTime as estReadingTime } from 'reading-time-estimator';
 
-// export const load: PageLoad = async ({ params }) => {
-// 	// return {
-// 	// 	post: {
-// 	// 		title: `Title for ${params.slug} goes here`,
-// 	// 		content: `Content for ${params.slug} goes here`
-// 	// 	}
-// 	// };
-// 	// console.log({ m: post.metadata, content });
+import { PUBLIC_SHOW_DRAFTS as SHOW_DRAFTS } from '$env/static/public';
 
-// 	const { date, slug } = getDateAndSlug(params.slug);
-// 	const post = await import(`../test.mdx`);
-// 	console.log({ params, date, slug, post });
-// 	// const { id, title, img, tone, draft } = post.metadata;
-// 	// const content = post.default;
+export const prerender = true;
 
-// 	// // id: '000'
-// 	// // title: 'MDX Test'
-// 	// // img: 'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'
-// 	// // tone: 'light'
-// 	// // draft: true
+export const load: PageLoad<Post> = async ({ params }) => {
+	const { date, slug } = getDateAndSlug(params.slug);
 
-// 	// if (post) {
-// 	// 	return {
-// 	// 		content,
-// 	// 		readingTime: readingTime(content),
-// 	// 		...post.metadata
-// 	// 	};
-// 	// } else {
-// 	// 	throw error(404, 'Not found');
-// 	// }
-// };
+	const post = await import(`../../../../_posts/${params.slug}.mdx`);
+	const rawPost = await import(`../../../../_posts/${params.slug}.mdx?raw`);
 
-// function getDateAndSlug(postSlug: string) {
-// 	const [Y, M, D, ...restSlug] = postSlug.replace('.mdx', '').split('-');
-// 	const date = `${Y}-${M}-${D}`;
-// 	const slug = `${date}-${restSlug.join('-')}`;
-// 	return { date, slug };
-// }
+	if (!post) {
+		throw error(404, 'Not found');
+	}
+
+	// Filter Drafts if env says so
+	const showDrafts = JSON.parse(SHOW_DRAFTS) || false;
+	if (!showDrafts && post.metadata.draft) {
+		throw error(404, 'Not found');
+	}
+
+	const content = post?.default;
+	const readingTime = estReadingTime(rawPost?.default, 200);
+
+	return {
+		...post?.metadata,
+		date,
+		slug,
+		content,
+		readingTime
+	};
+};

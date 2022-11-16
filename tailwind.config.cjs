@@ -28,10 +28,16 @@ const defaultStyle = {
 };
 
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts,mdx}'],
 
 	theme: {
 		extend: {
+			backdropBlur: {
+				scroll: 'var(--scroll-position-blur)'
+			},
+			opacity: {
+				scroll: `var(--scroll-modifier)`
+			},
 			backgroundColor: {
 				main: {
 					DEFAULT: colorWithOpacity(8)
@@ -52,8 +58,16 @@ const config = {
 			flex: {
 				'1/2': '1 1 50%'
 			},
+			fontFamily: {
+				sans: [`'Inter'`, ...defaultTheme.fontFamily.sans],
+				inherit: `inherit`
+			},
 			gridTemplateColumns: {
 				page: `1fr min(68ch, 100%) 1fr`
+			},
+			margin: {
+				'-container': 'calc((-1 * (100vw - 1024px) / 2) - 4rem)',
+				'-container+p': 'calc((-1 * (100vw - 1280px) / 2) + 4rem)'
 			},
 			maxWidth: {
 				'1/4': '25%',
@@ -115,11 +129,11 @@ const config = {
 							color: color(3),
 							fontFamily: defaultTheme.fontFamily.mono
 						},
-						pre: {
-							backgroundColor: color(7, 0.5),
-							color: color(3),
-							fontFamily: defaultTheme.fontFamily.mono
-						},
+						// pre: {
+						// 	backgroundColor: color(7, 0.5),
+						// 	color: color(3),
+						// 	fontFamily: defaultTheme.fontFamily.mono
+						// },
 						h1: {
 							...defaultStyle,
 							fontSize: '3rem',
@@ -152,7 +166,12 @@ const config = {
 						},
 						blockquote: {
 							...defaultStyle,
-							borderColor: color(5, 0.5)
+							borderColor: color(5, 0.5),
+							paddingLeft: '1.625em',
+							'& > p': {
+								marginTop: '.5em',
+								marginBottom: '.5em'
+							}
 						},
 						strong: {
 							...defaultStyle,
@@ -204,7 +223,7 @@ const config = {
 		}
 	},
 
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [require('tailwindcss-selection-variant'), require('@tailwindcss/typography')]
 };
 
 module.exports = config;
