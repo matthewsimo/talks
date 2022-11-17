@@ -34,8 +34,8 @@
 		<h1 class="text-4xl font-semibold ">About</h1>
 		<div class="aspect-square w-64 bg-slate-600 float-right ml-6" />
 		<p>
-			Hi there, I'm Matthew. I do prefer "Matthew" over "Matt" but I don't get up in arms about it.
-			I'm a born and raised Texan and have been building things for the web for fifteen years.
+			Hi there, I'm Matthew - I fight for the user. I'm a born and raised Texan and have been
+			building things for the web for fifteen years.
 		</p>
 
 		<p>
