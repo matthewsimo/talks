@@ -3,7 +3,7 @@
 	import { formatDistanceToNow } from 'date-fns';
 	import { anchorClass, codeClass, gridClass } from '$lib/classes';
 	import { waitFor } from '$lib/utils';
-	import ExternalLink from '$lib/ExternalLink.svelte';
+	import Link from '$lib/Link.svelte';
 	import Clients from './Clients.svelte';
 
 	let copyMsg: false | 'Success' | 'Error' = false;
@@ -51,8 +51,8 @@
 		</p>
 
 		<p>
-			You can find out more about the tools I like to <a class={anchorClass} href="/uses"
-				>use and my general set up over here</a
+			You can find out more about the tools I like to <Link href="/uses"
+				>use and my general set up over here</Link
 			>.
 		</p>
 	</div>
@@ -62,9 +62,7 @@
 
 		<p>
 			I've had the good fortune of working with some fabulous clients and IP, here is a small,
-			curated list. You can see a list of selected <a class={anchorClass} href="/projects"
-				>projects over here</a
-			>.
+			curated list. You can see a list of selected <Link href="/projects">projects over here</Link>.
 		</p>
 
 		<Clients />
@@ -76,30 +74,23 @@
 		<ul>
 			<li>
 				Email:
-				<ExternalLink
-					classes={anchorClass}
-					href={`mailto:hi@${username}.com?subject=Howdy, I saw your site`}
-				>
+				<Link href={`mailto:hi@${username}.com?subject=Howdy, I saw your site`}>
 					hi@{username}.com
-				</ExternalLink>
+				</Link>
 			</li>
 			<li>
 				Twitter:
-				<ExternalLink classes={anchorClass} href={`http://twitter.com/${username}`}
-					>@{username}
-				</ExternalLink>
+				<Link href={`http://twitter.com/${username}`}>@{username}</Link>
 			</li>
 			<li>
 				GitHub:
-				<ExternalLink classes={anchorClass} href={`http://github.com/${username}`}
-					>{username}
-				</ExternalLink>
+				<Link href={`http://github.com/${username}`}>{username}</Link>
 			</li>
 			<li>
 				Duolingo:
-				<ExternalLink classes={anchorClass} href={`https://www.duolingo.com/profile/${username}`}>
+				<Link href={`https://www.duolingo.com/profile/${username}`}>
 					{username}
-				</ExternalLink>
+				</Link>
 			</li>
 			<li>
 				Discord:
@@ -133,20 +124,18 @@
 			write and experiment.
 		</p>
 		<p>
-			It is built with Svelte & <a class={anchorClass} href="https://kit.svelte.dev/">Svelte Kit</a
-			>. Styled with
-			<a class={anchorClass} href="https://tailwindcss.com/">tailwindcss</a>. Articles are written
-			in <a class={anchorClass} href="https://www.markdownguide.org/">markdown</a>
+			It is built with Svelte & <Link href="https://kit.svelte.dev/">Svelte Kit</Link>. Styled with
+			<Link href="https://tailwindcss.com/">tailwindcss</Link>. Articles are written in <Link
+				href="https://www.markdownguide.org/">markdown</Link
+			>
 			and processed by
-			<a class={anchorClass} href="https://mdsvex.com/">mdsvex</a>. Any icons used are from the
-			fantastic
-			<a class={anchorClass} href="https://akveo.github.io/eva-icons/">Eva Icons</a> set.
+			<Link href="https://mdsvex.com/">mdsvex</Link>. Any icons used are from the fantastic
+			<Link href="https://akveo.github.io/eva-icons/">Eva Icons</Link> set.
 		</p>
 
 		<p>
-			I've opted to keep dependencies that need to load to a minimum so I'm having <a
-				class={anchorClass}
-				href="https://rsms.me/inter/">Inter</a
+			I've opted to keep dependencies that need to load to a minimum so I'm having <Link
+				href="https://rsms.me/inter/">Inter</Link
 			>
 			to the heavy lifting for headings and body copy. I've set the general type with the following stack:
 			<code class={codeClass}>

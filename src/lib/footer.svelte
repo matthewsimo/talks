@@ -1,11 +1,13 @@
 <script lang="ts">
 	import Texas from '$lib/icons/Texas.svelte';
 	import { anchorClass, gridClass } from './classes';
+	import Link from './Link.svelte';
 </script>
 
 <footer class={`pt-24 pb-20 z-10 relative ${gridClass}`}>
 	<small
-		>&copy; {new Date().getFullYear()} <a class={anchorClass} href="/about">Matthew Simo</a>
+		>&copy; {new Date().getFullYear()}
+		<Link href="/about">Matthew Simo</Link>
 		&mdash; Made in Texas
 		<span
 			class="inline-block w-6 align-middle"

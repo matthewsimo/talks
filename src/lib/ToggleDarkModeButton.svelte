@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { focusClasses } from './classes';
+	import { focusClass } from './classes';
 	import Moon from './icons/Moon.svelte';
 	import Sun from './icons/Sun.svelte';
 
@@ -52,7 +52,7 @@
 </script>
 
 <button
-	class={`text-main fill-current text-2xl w-5 h-5 ${focusClasses} ${classes} `}
+	class={`text-main fill-current text-2xl w-5 h-5 ${focusClass} ${classes} `}
 	on:click|preventDefault={handleClick}
 >
 	<svelte:component this={mode === 'dark' ? Sun : Moon} />

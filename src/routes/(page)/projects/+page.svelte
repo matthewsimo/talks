@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { anchorClass, gridClass } from '$lib/classes';
-	import Json from '$lib/Json.svelte';
-	import Link from '$lib/icons/Link.svelte';
-	import Code from '$lib/icons/Code.svelte';
+	import LinkIcon from '$lib/icons/Link.svelte';
+	import CodeIcon from '$lib/icons/Code.svelte';
 
 	const projects = [
 		{
@@ -60,13 +59,13 @@
 					<small class="text-sm flex flex-row justify-start flex-wrap gap-4 items-center">
 						{#if link}
 							<a class={`${anchorClass} inline-block`} href={link} title={`Visit ${title}`}>
-								<Link classes="inline-block " /> Site
+								<LinkIcon classes="inline-block " /> Site
 							</a>
 						{/if}
 
 						{#if source}
 							<a class={anchorClass} href={source} title={`Source Code for ${title}`}>
-								<Code classes="inline-block" /> Source
+								<CodeIcon classes="inline-block" /> Source
 							</a>
 						{/if}
 					</small>

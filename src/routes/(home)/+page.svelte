@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { anchorClass, gridClass } from '$lib/classes';
+	import { gridClass } from '$lib/classes';
+	import Link from '$lib/Link.svelte';
 	import { typewriter } from '$lib/utils';
 
 	const greetings = ['Howdy', 'Hi', 'Hola', 'Hallo', 'Saluton', 'Chào'];
@@ -43,12 +44,12 @@
 	<p>
 		I'm a Software Engineer & UX Designer based in Texas and I like to build things for humans. I
 		work as a Senior Solutions Architect of Front-End Engineering at{' '}
-		<a href="https://www.rightpoint.com/">Rightpoint</a> where I lead teams that build software that
-		aims to improves people&rsquo;s lives. You can usually find me exploring the intersection of humans
-		&amp; computers.
+		<Link href="https://www.rightpoint.com/">Rightpoint</Link> where I lead teams that build software
+		that aims to improves people&rsquo;s lives. You can usually find me exploring the intersection of
+		humans &amp; computers.
 	</p>
 	<p>
-		<a class={anchorClass} href="/about">Find out more</a> or
-		<a class={anchorClass} href="/posts">see some posts</a>
+		<Link href="/about">Find out more</Link> or
+		<Link href="/posts">see some posts</Link>
 	</p>
 </div>
