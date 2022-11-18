@@ -2,8 +2,15 @@
 	import type { PageData } from './$types';
 
 	import { gridClass } from '$lib/classes';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 	export let data: PageData;
 </script>
+
+<HeadMeta
+	title="Posts"
+	url={`https://matthewsimo.com/posts`}
+	description={`Blog posts written by Matthew Simo`}
+/>
 
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">

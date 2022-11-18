@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { gridClass } from '$lib/classes';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 	import Section from './Section.svelte';
 	import { usesData } from './data';
 </script>
+
+<HeadMeta
+	title="Uses"
+	url={`https://matthewsimo.com/uses`}
+	description={`Here's a breakdown of the tools and stuff I use day-to-day.`}
+/>
 
 <article class={gridClass}>
 	<div class="pb-8 space-y-8">

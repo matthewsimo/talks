@@ -4,11 +4,13 @@
 	import PostIntro from '$lib/PostIntro.svelte';
 	import ImageAttribution from '$lib/ImageAttribution.svelte';
 	import { gridClass } from '$lib/classes';
-	import Json from '$lib/Json.svelte';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 
 	export let data: PageData;
-	const { id, date, title, img, imgAttribution, content, readingTime } = data;
+	const { id, date, slug, title, img, imgAttribution, content, readingTime } = data;
 </script>
+
+<HeadMeta {title} url={`https://matthewsimo.com/posts/${slug}`} />
 
 <PostIntro post={{ id, date, title, img, readingTime }} />
 <article class={`${gridClass} relative`}>

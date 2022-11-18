@@ -1,9 +1,16 @@
 <script>
 	import { Deck, Slide } from '$lib/Deck';
 	import Heading from '$lib/Heading.svelte';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 	import Link from '$lib/Link.svelte';
 	import AnimationPlayground from './AnimationPlayground.svelte';
 </script>
+
+<HeadMeta
+	title="Animation 101"
+	url={`https://matthewsimo.com/talks/animation-101`}
+	description={`A slide deck for a talk covering the basics and history of animation`}
+/>
 
 <Deck>
 	<Slide>

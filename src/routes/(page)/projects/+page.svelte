@@ -2,6 +2,7 @@
 	import { anchorClass, gridClass } from '$lib/classes';
 	import LinkIcon from '$lib/icons/Link.svelte';
 	import CodeIcon from '$lib/icons/Code.svelte';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 
 	const projects = [
 		{
@@ -36,6 +37,12 @@
 		}
 	];
 </script>
+
+<HeadMeta
+	title="Projects"
+	url={`https://matthewsimo.com/projects`}
+	description={`A random collection of professional and hobby projects from Matthew Simo`}
+/>
 
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">

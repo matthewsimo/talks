@@ -3,6 +3,7 @@
 	import { formatDistanceToNow } from 'date-fns';
 	import { anchorClass, codeClass, gridClass } from '$lib/classes';
 	import { waitFor } from '$lib/utils';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 	import Link from '$lib/Link.svelte';
 	import Clients from './Clients.svelte';
 
@@ -28,6 +29,12 @@
 		}
 	};
 </script>
+
+<HeadMeta
+	title="About Matthew Simo"
+	url="https://matthewsimo.com/about"
+	description="Hi there, I'm Matthew - I fight for the user. I'm a born and raised Texan and have been building things for the web for fifteen years."
+/>
 
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">

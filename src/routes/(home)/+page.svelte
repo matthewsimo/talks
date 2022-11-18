@@ -3,6 +3,7 @@
 	import { gridClass } from '$lib/classes';
 	import { typewriter, waitFor } from '$lib/utils';
 	import Link from '$lib/Link.svelte';
+	import HeadMeta from '$lib/HeadMeta.svelte';
 
 	const greetings = ['Howdy,', 'Hi,', 'Hola,', 'Hallo,', 'Saluton,', 'Chào,'];
 	let visible = false;
@@ -15,7 +16,7 @@
 	const raf = async () => {
 		const n = Date.now();
 		// 10 sec interval
-		if (n - now >= 3 * 1000) {
+		if (n - now >= 8 * 1000) {
 			now = n;
 			visible = false;
 			await waitFor(400);
@@ -42,6 +43,12 @@
 		await raf();
 	});
 </script>
+
+<HeadMeta
+	title="Matthew Simo"
+	url="https://matthewsimo.com"
+	description="The website of Matthew Simo, a Software Engineer & UX Designer based in Texas"
+/>
 
 <div class={`${gridClass} leading-relaxed text-xl space-y-8 my-40`}>
 	<h1 class="text-5xl">
