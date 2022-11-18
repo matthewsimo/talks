@@ -1,22 +1,27 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	import { gridClass } from '$lib/classes';
+	import { typewriter, waitFor } from '$lib/utils';
 	import Link from '$lib/Link.svelte';
-	import { typewriter } from '$lib/utils';
 
-	const greetings = ['Howdy', 'Hi', 'Hola', 'Hallo', 'Saluton', 'Chào'];
+	const greetings = ['Howdy,', 'Hi,', 'Hola,', 'Hallo,', 'Saluton,', 'Chào,'];
+	let visible = false;
 	const getRandIndex = () => Math.floor(Math.random() * greetings.length);
 	let randIndex = getRandIndex();
 	$: greeting = greetings[randIndex];
 
 	let now = Date.now();
 
-	const raf = () => {
+	const raf = async () => {
 		const n = Date.now();
 		// 10 sec interval
-		if (n - now >= 10 * 1000) {
+		if (n - now >= 3 * 1000) {
 			now = n;
-			getNewIndex();
+			visible = false;
+			await waitFor(400);
+			randIndex = getNewIndex();
+			visible = true;
+			await waitFor(400);
 		}
 
 		requestAnimationFrame(raf);
@@ -29,18 +34,25 @@
 		while (oldIndex === newIndex) {
 			newIndex = getRandIndex();
 		}
-		randIndex = newIndex;
+		return newIndex;
 	};
 
-	if (browser) {
-		raf();
-	}
+	onMount(async () => {
+		visible = true;
+		await raf();
+	});
 </script>
 
 <div class={`${gridClass} leading-relaxed text-xl space-y-8 my-40`}>
 	<h1 class="text-5xl">
-		<span transition:typewriter>{greeting}</span>, I'm Matthew
+		{#each greetings as aGreeting}
+			{#if visible && greeting === aGreeting}
+				<span transition:typewriter>{aGreeting}</span>
+			{/if}
+		{/each}
+		I'm Matthew Simo
 	</h1>
+
 	<p>
 		I'm a Software Engineer & UX Designer based in Texas and I like to build things for humans. I
 		work as a Senior Solutions Architect of Front-End Engineering at{' '}

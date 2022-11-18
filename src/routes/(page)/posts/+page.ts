@@ -13,7 +13,10 @@ export type PostMetaData = {
 };
 
 export type ImportedPost = {
-	default: object;
+	default: {
+		render: () => { html: string };
+		$$render: unknown;
+	};
 	metadata: PostMetaData;
 };
 
@@ -25,12 +28,12 @@ export type Post = PostMetaData & {
 		words: number;
 		text: string;
 	};
-	content?: ImportedPost['default'];
+	content: ImportedPost['default'];
 };
 
 export const prerender = true;
 
-export const load: PageLoad = async () => {
+export const getAllPosts = async () => {
 	const posts = await import.meta.glob(`../../../_posts/*.mdx`);
 	const rawPosts = await import.meta.glob(`../../../_posts/*.mdx`, { as: 'raw' });
 
@@ -43,7 +46,7 @@ export const load: PageLoad = async () => {
 		const { date, slug } = getDateAndSlug(p.slice(16, -4));
 		const readingTime = estReadingTime(rawPost, 200);
 		const content = post?.default;
-		console.log({ date, draft: post.metadata.draft });
+
 		foundPosts.push({
 			...post?.metadata,
 			date,
@@ -57,6 +60,12 @@ export const load: PageLoad = async () => {
 	const sortedPosts = foundPosts.sort((a: Post, b: Post) => {
 		return b.date < a.date ? -1 : a.date < b.date ? 1 : 0;
 	});
+
+	return sortedPosts;
+};
+
+export const load: PageLoad = async () => {
+	const sortedPosts = await getAllPosts();
 
 	// Filter Drafts if env says so
 	const showDrafts = JSON.parse(SHOW_DRAFTS) || false;

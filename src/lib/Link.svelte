@@ -9,10 +9,8 @@
 </script>
 
 <a class={`${allClasses} group`} {href} target={isInternal ? '_self' : `_blank`}>
-	<slot />
-
-	{#if !isInternal}
-		<span class="hidden w-5 align-middle group-hover:inline-block">
+	<slot />{#if !isInternal}
+		<span class="inline-block w-5 ml-[2px] align-middle group-hover:motion-safe:animate-pulse">
 			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					fill-rule="evenodd"

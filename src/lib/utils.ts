@@ -5,7 +5,7 @@ export const waitFor = (num: number): Promise<unknown> => {
 	return new Promise((resolve) => setTimeout(resolve, num));
 };
 
-export function typewriter(node: HTMLElement, { speed = 1 } = { speed: 1 }) {
+export function typewriter(node: HTMLElement, { duration = 400 } = { duration: 400 }) {
 	const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 
 	if (!valid) {
@@ -13,8 +13,6 @@ export function typewriter(node: HTMLElement, { speed = 1 } = { speed: 1 }) {
 	}
 
 	const text = node.textContent || '';
-	const duration = text.length / (speed * 0.01);
-
 	return {
 		duration,
 		tick: (t: number) => {
