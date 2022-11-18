@@ -3,7 +3,7 @@
 	import Rss from './icons/RSS.svelte';
 	import Link from './Link.svelte';
 
-	import { anchorClass, gridClass } from './classes';
+	import { gridClass } from './classes';
 </script>
 
 <footer class={`pt-24 pb-20 z-10 relative ${gridClass}`}>

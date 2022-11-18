@@ -15,8 +15,6 @@
 
 	let mounted = false;
 
-	let opacityValue = 0;
-
 	const handleScroll = () => {
 		const { scrollY, innerHeight } = window;
 		const modifier = scrollY > innerHeight ? 1 : Number(Number(scrollY / innerHeight).toFixed(3));
