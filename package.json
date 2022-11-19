@@ -2,6 +2,7 @@
 	"name": "matthewsimo.com-sk",
 	"version": "0.0.1",
 	"private": true,
+	"packageManager": "pnpm@7.16.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
