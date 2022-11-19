@@ -5,7 +5,7 @@
 	import { waitFor } from '$lib/utils';
 	import HeadMeta from '$lib/HeadMeta.svelte';
 	import Link from '$lib/Link.svelte';
-	import Clients from './Clients.svelte';
+	import Clients from '$lib/Clients.svelte';
 
 	let copyMsg: false | 'Success' | 'Error' = false;
 
