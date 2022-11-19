@@ -17,7 +17,10 @@ const config = {
 	],
 
 	kit: {
-		adapter: vercel()
+		adapter: vercel(),
+		alias: {
+			$lib: 'src/lib'
+		}
 	}
 };
 
