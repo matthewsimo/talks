@@ -1,10 +1,12 @@
 import { Feed, type Item } from 'feed';
 import { getAllPosts } from '../(page)/posts/+page';
 
+const domain = 'https://www.matthewsimo.com'
+
 const author = {
 	name: 'Matthew Simo',
 	email: 'hi@matthewsimo.com',
-	link: 'https://matthewsimo.com'
+	link: domain
 };
 
 export async function GET() {
@@ -12,12 +14,12 @@ export async function GET() {
 		title: 'matthewsimo.com',
 		description:
 			'The personal blog of Matthew Simo, Software Engineer & UX Designer based in Texas.',
-		link: 'https://matthewsimo.com',
-		id: 'https://matthewsimo.com',
+		link: domain,
+		id: `${domain}/`,
 		language: 'en',
 		copyright: `All rights reserved ${new Date().getFullYear()}, John Doe`,
 		feedLinks: {
-			atom: 'https://matthewsimo.com/feed.xml'
+			atom: `${domain}/feed.xml`
 		},
 		author
 	});
@@ -26,11 +28,12 @@ export async function GET() {
 
 	allPosts
 		.filter((p) => !p.draft)
-		.forEach(async ({ title, draft, slug, date, content }) => {
+		.forEach(async ({ title, slug, date, content }) => {
+
 			const { html } = content.render();
 			const item: Item = {
-				title: `${title} - ${draft}`,
-				link: `https://matthewsimo.com/posts/${slug}`,
+				title,
+				link: `${domain}/posts/${slug}`,
 				date: new Date(date),
 				author: [author],
 				content: html
