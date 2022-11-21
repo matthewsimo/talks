@@ -21,7 +21,9 @@ export async function GET() {
 		feedLinks: {
 			atom: `${domain}/feed.xml`
 		},
-		author
+		image: `${domain}/favicon.jpg`,
+		favicon: `${domain}/favicon.svg`,
+		author,
 	});
 
 	const allPosts = await getAllPosts();
