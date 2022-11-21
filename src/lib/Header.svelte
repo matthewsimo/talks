@@ -24,8 +24,8 @@
 </script>
 
 <nav class={`${gridClass} py-20 z-10 relative`}>
-	<div class="flex flex-row justify-between">
-		<div class="flex flex-row gap-6">
+	<div class="flex flex-row justify-between items-baseline md:items-center">
+		<div class="flex flex-col gap-12 md:flex-row md:gap-8">
 			<h1 class="font-semibold text-2xl">
 				<a href="/">Matthew&nbsp;Simo</a>
 			</h1>

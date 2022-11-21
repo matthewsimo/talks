@@ -39,11 +39,13 @@
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">
 		<h1 class="text-4xl font-semibold ">About</h1>
-		<img
-			class="aspect-square w-64 bg-slate-600 float-right ml-6"
-			src="assets/img/matthewsimo-avatar.jpg"
-			alt="Matthew Simo Mugshot"
-		/>
+		<div>
+			<img
+				class="aspect-square w-1/2 sm:w-64 bg-slate-600 float-right ml-6 mb-6"
+				src="assets/img/matthewsimo-avatar.jpg"
+				alt="Matthew Simo Mugshot"
+			/>
+		</div>
 		<p>
 			Hi there, I'm Matthew - I fight for the user. I'm a born and raised Texan and have been
 			building things for the web for fifteen years.

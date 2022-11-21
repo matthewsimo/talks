@@ -3,7 +3,7 @@
 		'aspect-video block py-8 bg-gradient-to-br from-main-700 to-main-800/70 rounded-sm transition-all hover:scale-105 hover:shadow-md';
 </script>
 
-<ul class={`grid grid-cols-4 gap-4 text-center overflow-visible`}>
+<ul class={`grid grid-cols-2 md:grid-cols-4 gap-4 text-center overflow-visible`}>
 	<li class={clientClass}>AMC Networks</li>
 	<li class={clientClass}>Breaking Bad</li>
 	<li class={clientClass}>Walking Dead</li>

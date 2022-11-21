@@ -57,7 +57,7 @@
 				<span transition:typewriter>{aGreeting}</span>
 			{/if}
 		{/each}
-		I'm Matthew Simo
+		I'm Matthew&nbsp;Simo
 	</h1>
 
 	<p>
