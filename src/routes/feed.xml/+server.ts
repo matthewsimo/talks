@@ -1,7 +1,9 @@
 import { Feed, type Item } from 'feed';
 import { getAllPosts } from '../(page)/posts/+page';
 
-const domain = 'https://www.matthewsimo.com'
+export const prerender = true;
+
+const domain = 'https://www.matthewsimo.com';
 
 const author = {
 	name: 'Matthew Simo',
@@ -23,7 +25,7 @@ export async function GET() {
 		},
 		image: `${domain}/favicon.jpg`,
 		favicon: `${domain}/favicon.svg`,
-		author,
+		author
 	});
 
 	const allPosts = await getAllPosts();
@@ -31,7 +33,6 @@ export async function GET() {
 	allPosts
 		.filter((p) => !p.draft)
 		.forEach(async ({ title, slug, date, content }) => {
-
 			const { html } = content.render();
 			const item: Item = {
 				title,
