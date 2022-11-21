@@ -44,6 +44,8 @@
 	});
 </script>
 
+<svelte:head><title>Matthew Simo | Software Engineer & UX Designer</title></svelte:head>
+
 <HeadMeta
 	title="Matthew Simo"
 	url="https://matthewsimo.com"

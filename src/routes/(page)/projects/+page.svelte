@@ -38,6 +38,8 @@
 	];
 </script>
 
+<svelte:head><title>Projects | Matthew Simo</title></svelte:head>
+
 <HeadMeta
 	title="Projects"
 	url={`https://matthewsimo.com/projects`}

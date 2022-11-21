@@ -3,5 +3,7 @@
 </script>
 
 <Backdrop>
-	<slot />
+	<main>
+		<slot />
+	</main>
 </Backdrop>

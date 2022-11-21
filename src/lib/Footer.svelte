@@ -18,7 +18,7 @@
 			<Texas />
 		</span>
 
-		<Link href="/feed.xml">
+		<Link href="/feed.xml" aria-label="RSS Feed">
 			<span class="p-1 align-baseline relative -top-[1px]">
 				<Rss classes="inline-block w-4" />
 			</span>

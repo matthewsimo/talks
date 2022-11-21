@@ -6,6 +6,8 @@
 	import AnimationPlayground from './AnimationPlayground.svelte';
 </script>
 
+<svelte:head><title>Animation 101 | Matthew Simo</title></svelte:head>
+
 <HeadMeta
 	title="Animation 101"
 	url={`https://matthewsimo.com/talks/animation-101`}

@@ -10,6 +10,8 @@
 	const { id, date, slug, title, img, imgAttribution, content, readingTime } = data;
 </script>
 
+<svelte:head><title>{title} | Matthew Simo</title></svelte:head>
+
 <HeadMeta {title} url={`https://matthewsimo.com/posts/${slug}`} />
 
 <PostIntro post={{ id, date, title, img, readingTime }} />

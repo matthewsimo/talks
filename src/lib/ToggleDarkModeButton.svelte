@@ -52,6 +52,7 @@
 </script>
 
 <button
+	aria-label="toggle color mode"
 	class={`text-main fill-current text-2xl w-5 h-5 ${focusClass} ${classes} `}
 	on:click|preventDefault={handleClick}
 >

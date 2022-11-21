@@ -5,6 +5,8 @@
 	import { usesData } from './data';
 </script>
 
+<svelte:head><title>Uses | Matthew Simo</title></svelte:head>
+
 <HeadMeta
 	title="Uses"
 	url={`https://matthewsimo.com/uses`}

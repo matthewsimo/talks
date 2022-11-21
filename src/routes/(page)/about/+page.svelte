@@ -30,6 +30,8 @@
 	};
 </script>
 
+<svelte:head><title>About Matthew Simo</title></svelte:head>
+
 <HeadMeta
 	title="About Matthew Simo"
 	url="https://matthewsimo.com/about"
@@ -71,7 +73,7 @@
 	</div>
 
 	<div class="space-y-6 pb-10">
-		<h3 class="text-2xl font-semibold">Selected Clients</h3>
+		<h2 class="text-2xl font-semibold">Selected Clients</h2>
 
 		<p>
 			I've had the good fortune of working with some fabulous clients and IP, here is a small,
@@ -82,7 +84,7 @@
 	</div>
 
 	<div class="space-y-6 pb-10">
-		<h3 class="text-2xl font-semibold">Elsewhere</h3>
+		<h2 class="text-2xl font-semibold">Elsewhere</h2>
 
 		<ul>
 			<li>
@@ -109,7 +111,7 @@
 				Discord:
 				<span
 					class={`${anchorClass} inline-block ${!copyMsg ? 'cursor-copy' : 'cursor-default'}`}
-					on:click={handleClick}>{username}<span class="opacity-70">{discordId}</span></span
+					on:click={handleClick}>{username}<span class="text-main-400">{discordId}</span></span
 				>
 				{#if copyMsg === 'Success'}
 					<span class="inline-block" transition:fly={{ y: 6, duration: 500 }}>Copied!</span>
@@ -123,7 +125,7 @@
 	</div>
 
 	<div class="space-y-6 pb-10">
-		<h3 class="text-2xl font-semibold">This Site</h3>
+		<h2 class="text-2xl font-semibold">This Site</h2>
 		<p>
 			This site is designed and built by myself with the purpose of being <strong
 				class="font-semibold">uncomplicated</strong

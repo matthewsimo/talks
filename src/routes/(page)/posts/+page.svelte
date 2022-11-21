@@ -6,6 +6,8 @@
 	export let data: PageData;
 </script>
 
+<svelte:head><title>Posts | Matthew Simo</title></svelte:head>
+
 <HeadMeta
 	title="Posts"
 	url={`https://matthewsimo.com/posts`}
