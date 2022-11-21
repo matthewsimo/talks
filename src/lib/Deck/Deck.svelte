@@ -65,5 +65,9 @@
 				{$deckStore + 1} / {slideCount}
 			</small>
 		</div>
+		<div class="absolute bottom-6 right-6 space-x-4 flex items-center">
+			<button class={anchorClass} on:click={() => deckStore.decrement()}>Prev</button>
+			<button class={anchorClass} on:click={() => deckStore.increment()}>Next</button>
+		</div>
 	{/if}
 </div>
