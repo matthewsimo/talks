@@ -17,7 +17,7 @@ export async function GET() {
 		link: domain,
 		id: `${domain}/`,
 		language: 'en',
-		copyright: `All rights reserved ${new Date().getFullYear()}, John Doe`,
+		copyright: `All rights reserved ${new Date().getFullYear()}, Matthew Simo`,
 		feedLinks: {
 			atom: `${domain}/feed.xml`
 		},
