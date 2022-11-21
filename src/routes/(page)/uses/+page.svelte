@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gridClass } from '$lib/classes';
 	import HeadMeta from '$lib/HeadMeta.svelte';
-	import Section from '$lib/Section.svelte';
+	import Section from './Section.svelte';
 	import { usesData } from './data';
 </script>
 

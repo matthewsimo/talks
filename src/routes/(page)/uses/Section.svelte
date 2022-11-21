@@ -11,7 +11,7 @@
 			{#each items as { name, desc }}
 				<dt class="text-xl">{name}</dt>
 				<dd class="pb-4">
-					{desc}
+					{@html desc}
 				</dd>
 			{/each}
 		</dl>

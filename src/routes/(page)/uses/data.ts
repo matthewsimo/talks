@@ -1,3 +1,5 @@
+import { anchorClass } from '$lib/classes';
+
 type item = {
 	name: string;
 	desc: string;
@@ -42,7 +44,7 @@ export const usesData: section[] = [
 			},
 			{
 				name: `iTerm2`,
-				desc: `The best terminal I've found, rides the balance between configurable & overly compelex well.`
+				desc: `The best terminal I've found, rides the balance between configurable & overly compelex well. My dotfiles are <a class="${anchorClass}" href="https://github.com/matthewsimo/dotfiles">over here</a>`
 			},
 			{
 				name: `Raycast`,
@@ -61,9 +63,9 @@ export const usesData: section[] = [
 				desc: `It's the missing window management hotkeys you need to touch your mouse as little as possible.`
 			}
 		]
-	},
-	{
-		title: `Accessories/Misc`,
-		items: []
 	}
+	// {
+	// 	title: `Accessories/Misc`,
+	// 	items: []
+	// }
 ];
