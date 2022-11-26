@@ -20,7 +20,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading level={2}>Agenda</Heading>
+		<Heading level={2} as="h2">Agenda</Heading>
 		<ol class="list-decimal mt-6 space-y-2">
 			<li class="text-2xl">Why?</li>
 			<li class="text-2xl">Offensively Short History</li>
@@ -31,11 +31,11 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Why?</Heading>
+		<Heading as="h2">Why?</Heading>
 	</Slide>
 
 	<Slide>
-		<Heading classes="text-center transform-gpu scale-150">
+		<Heading as="h2" classes="text-center transform-gpu scale-150">
 			<span
 				style:text-shadow={`
                 4px 4px #ef3550,
@@ -64,7 +64,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Extra Affordances</Heading>
+		<Heading as="h2">Extra Affordances</Heading>
 		<blockquote
 			class="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed"
 		>
@@ -74,7 +74,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Extra Feedback</Heading>
+		<Heading as="h2">Extra Feedback</Heading>
 		<blockquote
 			class="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed"
 		>
@@ -102,7 +102,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Offensively Short History</Heading>
+		<Heading as="h2">Offensively Short History</Heading>
 	</Slide>
 
 	<Slide>
@@ -145,17 +145,17 @@
 	</Slide>
 
 	<Slide>
-		<Heading>First Principles</Heading>
+		<Heading as="h2">First Principles</Heading>
 	</Slide>
 
 	<Slide>
-		<Heading level={2} classes="text-center mt-20">
+		<Heading as="h2" level={2} classes="text-center mt-20">
 			<Link href="https://vimeo.com/93206523">Video: The illusion of life</Link>
 		</Heading>
 	</Slide>
 
 	<Slide>
-		<Heading>Application</Heading>
+		<Heading as="h2">Application</Heading>
 		<p
 			class="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed"
 		>
@@ -164,7 +164,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Display Refresh Rate</Heading>
+		<Heading as="h2">Display Refresh Rate</Heading>
 		<p class="text-main-300 text-2xl max-w-2xl my-12 pl-4 leading-relaxed">
 			A display's refresh rate will dictate how often your "picture book" frames need to be. You'll
 			see this measured in hertz. 1 Hz = 1 cycle per second.
@@ -185,7 +185,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Jank</Heading>
+		<Heading as="h2">Jank</Heading>
 		<p
 			class="text-main-300 text-2xl max-w-2xl my-12 pl-4 border-l-4 border-solid border-main-primary leading-relaxed"
 		>
@@ -198,7 +198,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading>Interpolation</Heading>
+		<Heading as="h2">Interpolation</Heading>
 	</Slide>
 
 	<Slide>
@@ -218,7 +218,7 @@
 	</Slide>
 
 	<Slide>
-		<Heading level={2}>Resources</Heading>
+		<Heading as="h2" level={2}>Resources</Heading>
 		<ul class="mt-6 space-y-4">
 			<li>
 				<Link href="https://www.nngroup.com/articles/animation-purpose-ux/">
@@ -247,6 +247,6 @@
 		</ul>
 	</Slide>
 	<Slide>
-		<Heading>Thanks!</Heading>
+		<Heading as="h2">Thanks!</Heading>
 	</Slide>
 </Deck>
