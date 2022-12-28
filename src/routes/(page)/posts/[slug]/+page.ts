@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import { type Post, getDateAndSlug } from '../+page';
+import { type Post, getDateAndSlug } from '../utils';
 import { error } from '@sveltejs/kit';
 import { readingTime as estReadingTime } from 'reading-time-estimator';
 

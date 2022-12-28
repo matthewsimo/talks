@@ -15,7 +15,7 @@
 	const username = `matthewsimo`;
 	const discordId = `#7931`;
 
-	const handleClick = async (e: MouseEvent): Promise<void> => {
+	const handleClick = async (): Promise<void> => {
 		try {
 			await navigator.clipboard.writeText(`${username}${discordId}`);
 			copyMsg = 'Success';
@@ -111,7 +111,7 @@
 				Discord:
 				<span
 					class={`${anchorClass} inline-block ${!copyMsg ? 'cursor-copy' : 'cursor-default'}`}
-					on:click={handleClick}>{username}<span class="text-main-400">{discordId}</span></span
+					on:keypress={handleClick}>{username}<span class="text-main-400">{discordId}</span></span
 				>
 				{#if copyMsg === 'Success'}
 					<span class="inline-block" transition:fly={{ y: 6, duration: 500 }}>Copied!</span>

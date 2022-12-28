@@ -1,5 +1,5 @@
 import { Feed, type Item } from 'feed';
-import { getAllPosts } from '../(page)/posts/+page';
+import { getAllPosts } from '../(page)/posts/utils';
 
 export const prerender = true;
 
