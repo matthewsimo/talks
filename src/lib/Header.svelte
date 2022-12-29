@@ -37,7 +37,7 @@
 					<li class={`${menuItemClass} ${isPage('/posts') ? currentClass : ''}`}>
 						<a on:click={onClick} class={headerAnchorClass} href="/posts">Posts</a>
 					</li>
-					<li class={`${menuItemClass} ${isPage('/labs') ? currentClass : ''}`}>
+					<li class={`${menuItemClass} ${isPage('/projects') ? currentClass : ''}`}>
 						<a on:click={onClick} class={headerAnchorClass} href="/projects">Projects</a>
 					</li>
 					<span class={`${menuIndicatorClass}`} aria-hidden="true" />
