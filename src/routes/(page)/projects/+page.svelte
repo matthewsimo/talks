@@ -9,7 +9,7 @@
 			title: 'Memento Mori',
 			link: 'https://memento-mori.matthewsimo.com',
 			desc: 'Remember, you will die. A small project in an intentional effort to be more mindful of my time on this earth. Memento Mori is a weekly calendar that tracks the progress of your life and hopefully helps promote living more deeply.',
-			source: 'https://github.com/matthewsimo/gart',
+			source: 'https://github.com/matthewsimo/memento-mori',
 			img: `/assets/img/memento-mori.png`
 		},
 		{
