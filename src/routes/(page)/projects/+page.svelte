@@ -6,8 +6,15 @@
 
 	const projects = [
 		{
+			title: 'Memento Mori',
+			link: 'https://memento-mori.matthewsimo.com',
+			desc: 'Remember, you will die. A small project in an intentional effort to be more mindful of my time on this earth. Memento Mori is a weekly calendar that tracks the progress of your life and hopefully helps promote living more deeply.',
+			source: 'https://github.com/matthewsimo/gart',
+			img: `/assets/img/memento-mori.png`
+		},
+		{
 			title: 'GART',
-			link: 'http://gart.matthewsimo.com',
+			link: 'https://gart.matthewsimo.com',
 			desc: 'My simple generative art/creative coding environment built on sveltekit',
 			source: 'https://github.com/matthewsimo/gart',
 			img: undefined
@@ -79,6 +86,11 @@
 						{/if}
 					</small>
 				</footer>
+				{#if img}
+					<a href={link}>
+						<img class="py-4" src={img} alt={`Screenshot of ${title}`} />
+					</a>
+				{/if}
 			</li>
 		{/each}
 	</ul>
