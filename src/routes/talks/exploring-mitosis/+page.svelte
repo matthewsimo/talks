@@ -232,6 +232,20 @@ export default function ComponentWithContext(props: { content: string }) {
 		<Heading classes="absolute top-6 left-6 text-main-500" level={6} as="h2">
 			Why might you use it?
 		</Heading>
+
+		<div class="mt-6 space-2 flex justify-around align-baseline">
+			<Heading level={4} as="h2">Interesting Usecases</Heading>
+			<ol class="list-decimal space-y-2 w-[50%]">
+				<li class="text-2xl">
+					Maintaining a design system and component library for consumers using varied frontend
+					frameworks
+				</li>
+				<li class="text-2xl">
+					Dramatically lower the investment to brind your design system and core components to
+					alternate platforms
+				</li>
+			</ol>
+		</div>
 	</Slide>
 
 	<Slide>
