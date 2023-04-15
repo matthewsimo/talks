@@ -17,6 +17,14 @@
 			d: `BuilderIO`
 		},
 		{
+			l: 'https://papanasi.js.org/',
+			d: 'Papanasi - component library using mitosis'
+		},
+		{
+			l: 'https://portal.gitnation.org/contents/its-time-to-de-fragment-the-web',
+			d: '"It\'s Time to De-Fragment the Web" talk from core maintainer Sami Jaber'
+		},
+		{
 			l: `/posts/2023-04-15-a-look-at-mitosis`,
 			d: `Blog post version of this talk`
 		}
@@ -303,7 +311,7 @@ export default function ComponentWithContext(props: { content: string }) {
 		<Heading level={2} as="h2">Resources</Heading>
 		<ul class="mt-6 space-y-4">
 			{#each resourceLinks as link}
-				<li>
+				<li class="text-xl">
 					<Link href={link.l}>
 						{link.d}
 					</Link>
@@ -313,6 +321,6 @@ export default function ComponentWithContext(props: { content: string }) {
 	</Slide>
 
 	<Slide>
-		<Heading as="h2">Thanks!</Heading>
+		<Heading as="h2">Thank you!</Heading>
 	</Slide>
 </Deck>
