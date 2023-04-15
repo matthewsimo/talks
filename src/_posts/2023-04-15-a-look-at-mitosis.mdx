@@ -5,6 +5,10 @@ img: 'https://images.unsplash.com/photo-1624544056688-88e214935bc2?ixlib=rb-4.0.
 imgAttribution: 'Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/photos/NFtyWc2NSTA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 ---
 
+<script>
+  import Link from '$lib/Link.svelte'
+</script>
+
 Recently at work, I had a bit of downtime and took the opportunity to investigate [Mitosis](https://github.com/builderio/mitosis). In this post, I'll quickly break down what it is, who is building it, and my thoughts after a week or so of tinkering. Let's dive in.
 
 ### What is it
@@ -85,3 +89,7 @@ Disclaimer: It's a complicated project and I don't have any insight into their p
 1. Stardize and document the mitosis IR, different libs could have subtle difference in some underlying semantics and this would help to at least identify those differences
 2. Collaborate with library/framework authors and get buy in so that the source of truth owns the code that mitosis uses to turn the IR into the compiled output for that specific library/framework.
 3. Create a "npm create template" that folks can use to really quickly start to play with mitosis
+
+_The content of this post is also in a presentation format for <Link href="https://www.meetup.com/js-chi/events/288515502/">a talk</Link> I'm doing for the <Link href="https://www.meetup.com/js-chi/">Chicago JavaScript Meetup Group</Link>._
+
+_You can view the slides over <Link href="/talks/exploring-mitosis">here</Link>._
