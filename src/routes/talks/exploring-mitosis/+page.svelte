@@ -253,6 +253,9 @@ export default function ComponentWithContext(props: { content: string }) {
 					Dramatically lower the investment to bring your design system and core components to
 					alternate platforms
 				</li>
+				<li class="text-2xl">
+					Your organization needs to build things for your customers to use in their own software
+				</li>
 			</ol>
 		</div>
 	</Slide>
