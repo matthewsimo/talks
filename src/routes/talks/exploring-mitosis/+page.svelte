@@ -193,12 +193,14 @@ export default function ComponentWithContext(props: { content: string }) {
 		<Heading classes="absolute top-6 left-6 text-main-500" level={6} as="h2">What is it?</Heading>
 
 		<div class="mt-6 space-2 flex justify-around align-baseline">
-			<Heading level={3} as="h2"
-				><Link href="https://github.com/BuilderIO/mitosis/blob/main/docs/hooks.md"
-					>Hooks & Lifecycle methods</Link
-				></Heading
-			>
-			<ol class="list-decimal space-y-2 w-[50%]">
+			<div class="w-[40%]">
+				<Heading level={3} as="h2"
+					><Link href="https://github.com/BuilderIO/mitosis/blob/main/docs/hooks.md"
+						>Hooks & Lifecycle methods</Link
+					></Heading
+				>
+			</div>
+			<ol class="list-decimal space-y-2 w-[60%]">
 				<li class="text-2xl"><code>useRef</code></li>
 				<li class="text-2xl"><code>useStyle</code></li>
 				<li class="text-2xl"><code>useMetadata</code></li>
