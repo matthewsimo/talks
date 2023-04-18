@@ -229,8 +229,9 @@ export default function ComponentWithContext(props: { content: string }) {
 			</p>
 
 			<p class="text-center leading-relaxed text-2xl">
-				The team at builder.io is very talented and capable. The are also behind the great open
-				source tools <Link href="https://github.com/BuilderIO/partytown">partytown</Link> and
+				The are also behind the great open source tools <Link
+					href="https://github.com/BuilderIO/partytown">partytown</Link
+				> and
 				<Link href="https://github.com/BuilderIO/qwik">qwik</Link>.
 			</p>
 		</div>
@@ -249,7 +250,7 @@ export default function ComponentWithContext(props: { content: string }) {
 					frameworks
 				</li>
 				<li class="text-2xl">
-					Dramatically lower the investment to brind your design system and core components to
+					Dramatically lower the investment to bring your design system and core components to
 					alternate platforms
 				</li>
 			</ol>
@@ -265,7 +266,7 @@ export default function ComponentWithContext(props: { content: string }) {
 			<Heading level={2} as="h2">Pros</Heading>
 			<ol class="list-decimal space-y-2 w-[60%]">
 				<li class="text-2xl">Active development</li>
-				<li class="text-2xl">Active and friendly interactions</li>
+				<li class="text-2xl">Attentive responses</li>
 				<li class="text-2xl">Helpful devs and community</li>
 				<li class="text-2xl">Fast compilation and works surprisingly well</li>
 				<li class="text-2xl">JS ecosystem needs more agnostic first tools</li>
@@ -282,9 +283,11 @@ export default function ComponentWithContext(props: { content: string }) {
 			<Heading level={2} as="h2">Cons</Heading>
 			<ol class="list-decimal space-y-2 w-[60%]">
 				<li class="text-2xl">Large and complex surface area</li>
-				<li class="text-2xl">Still early days</li>
+				<li class="text-2xl">Still early days, documentation needs to mature some</li>
 				<li class="text-2xl">Could be difficult to get contributors</li>
-				<li class="text-2xl">Hard to see support for specific targets</li>
+				<li class="text-2xl">
+					Hard to see support for specific targets & understand semantic differences between targets
+				</li>
 				<li class="text-2xl">
 					Always have to deal with platform constraints & specific device UX paradigms
 				</li>
