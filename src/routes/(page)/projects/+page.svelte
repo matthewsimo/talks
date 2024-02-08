@@ -55,7 +55,7 @@
 
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">
-		<h1 class="text-4xl font-semibold ">Projects</h1>
+		<h1 class="text-4xl font-semibold">Projects</h1>
 		<p>
 			The vast majority of my day-to-day work is under NDA so I can't feature it here but here's a
 			random collection of professional and hobby projects.

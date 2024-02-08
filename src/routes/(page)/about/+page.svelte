@@ -40,7 +40,7 @@
 
 <article class={`${gridClass}`}>
 	<div class="space-y-6 pb-10">
-		<h1 class="text-4xl font-semibold ">About</h1>
+		<h1 class="text-4xl font-semibold">About</h1>
 		<div>
 			<img
 				class="aspect-square w-1/2 sm:w-64 bg-slate-600 float-right ml-6 mb-6"

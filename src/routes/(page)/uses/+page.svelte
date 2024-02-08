@@ -15,7 +15,7 @@
 
 <article class={gridClass}>
 	<div class="pb-8 space-y-8">
-		<h1 class="text-4xl font-semibold ">Uses</h1>
+		<h1 class="text-4xl font-semibold">Uses</h1>
 
 		<p class="text-lg">Here's a breakdown of the tools and stuff I use day-to-day.</p>
 	</div>

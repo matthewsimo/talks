@@ -57,7 +57,7 @@
 				</span>
 			</div>
 			<h2
-				class="text-4xl sm:text-6xl leading-relaxed tracking-tighter  row-span-1 col-span-5 mt-4 mb-2"
+				class="text-4xl sm:text-6xl leading-relaxed tracking-tighter row-span-1 col-span-5 mt-4 mb-2"
 			>
 				{post.title}
 			</h2>
