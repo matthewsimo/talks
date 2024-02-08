@@ -10,7 +10,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"new:draft": "plop draft"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "1.0.0",
@@ -24,6 +25,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"mdsvex": "^0.10.6",
+		"plop": "^4.0.1",
 		"postcss": "^8.4.21",
 		"postcss-load-config": "^4.0.1",
 		"postcss-preset-env": "^7.8.3",
