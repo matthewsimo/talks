@@ -12,7 +12,7 @@
 
 <svelte:head><title>{title} | Matthew Simo</title></svelte:head>
 
-<HeadMeta {title} url={`https://matthewsimo.com/posts/${slug}`} />
+<HeadMeta {title} url={`https://matthewsimo.com/posts/${slug}`} image={img} />
 
 <PostIntro post={{ id, date, title, img, readingTime }} />
 <article class={`${gridClass} relative`}>
