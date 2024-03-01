@@ -6,6 +6,13 @@
 
 	const projects = [
 		{
+			title: 'Node Vars Figma Plugin',
+			link: 'https://www.figma.com/community/plugin/1345121556751264927',
+			desc: 'See what variables your selected nodes are using',
+			source: 'https://github.com/matthewsimo/figma-node-vars',
+			img: `/assets/img/plugin-cover.png`
+		},
+		{
 			title: 'Memento Mori',
 			link: 'https://memento-mori.matthewsimo.com',
 			desc: 'Remember, you will die. A small project in an intentional effort to be more mindful of my time on this earth. Memento Mori is a weekly calendar that tracks the progress of your life and hopefully helps promote living more deeply.',

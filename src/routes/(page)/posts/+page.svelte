@@ -22,7 +22,7 @@
 			<ul class="text-xl py-6 space-y-2">
 				{#each data.allPosts as { title, id, date, slug, img, readingTime }}
 					<li>
-						{id} -
+						<span class="font-mono">{id}</span> -
 						<a
 							class="outline-none focus:underline focus:text-main-400 focus:ring focus:ring-main focus:ring-offset-4 focus:ring-offset-main focus:ring-opacity-75 rounded-sm text-main-primary font-normal hover:underline hover:text-main-400 cursor-pointer"
 							href={`/posts/${slug}`}>{title}</a
