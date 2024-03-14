@@ -17,7 +17,7 @@ For the most part, the Figma Plugin docs are great. If you have an idea you are 
 If you have any exposure to [Electron apps](https://www.electronjs.org), you'll find it familiar. In a nutshell, there are two processes involved.
 
 1. The NodeJS process that is in charge of managing the plugin and communicating with the host environment, in this case Figma.
-2. The optional sandboxed UI that your plugin can tell Figma to show when it wants. Note: this code does not have direct access to the Figma API and has to communicate with your plugin’s NodeJS process via [message passing](https://www.figma.com/plugin-docs/api/properties/figma-ui-postmessage/).
+2. The optional sandboxed UI that your plugin can tell Figma to show when it wants. Note: this code does not have direct access to the Figma API and has to communicate with your plugin's NodeJS process via [message passing](https://www.figma.com/plugin-docs/api/properties/figma-ui-postmessage/).
 
 ## Node Vars Architecture
 
@@ -39,7 +39,7 @@ This layer handles managing data on plugin startup and over the course of its li
 
 ### 2. UI Layer
 
-The UI layer is, you guessed it, in charge of rendering the UI that the user interacts with within the Figma Application. In this case, I'm using React as the UI technology here but you could use anything (or nothing!) you wanted. The UI needs to manage state, handle input, and both send & respond to messages to/from the data layer. Using [tailwind](https://tailwindcss.com) to style the UI, and [shadcn/ui](https://ui.shadcn.com) for some nice looking implimentation of (mostly [Radix](https://www.radix-ui.com/primitives)) primitive components – nothing too crazy here.
+The UI layer is, you guessed it, in charge of rendering the UI that the user interacts with within the Figma Application. In this case, I'm using React as the UI technology here but you could use anything (or nothing!) you wanted. The UI needs to manage state, handle input, and both send & respond to messages to/from the data layer. Using [tailwind](https://tailwindcss.com) to style the UI, and [shadcn/ui](https://ui.shadcn.com) for some nice looking implimentation of (mostly [Radix](https://www.radix-ui.com/primitives)) primitive components &mdash; nothing too crazy here.
 
 ### 3. Interface Layer
 
