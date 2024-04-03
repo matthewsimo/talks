@@ -43,8 +43,8 @@
 		<h1 class="text-4xl font-semibold">About</h1>
 		<div>
 			<img
-				class="aspect-square w-1/2 sm:w-64 bg-slate-600 float-right ml-6 mb-6"
-				src="assets/img/matthewsimo-avatar.jpg"
+				class="aspect-square w-1/2 sm:w-64 bg-slate-600 float-right ml-6 mb-6 rounded-xl"
+				src="assets/img/matthewsimo-avatar.png"
 				alt="Matthew Simo Mugshot"
 			/>
 		</div>
@@ -94,8 +94,8 @@
 				</Link>
 			</li>
 			<li>
-				Twitter:
-				<Link href={`http://twitter.com/${username}`}>@{username}</Link>
+				Mastodon:
+				<Link href={`https://mastodon.social/@${username}`}>@{username}</Link>
 			</li>
 			<li>
 				GitHub:
