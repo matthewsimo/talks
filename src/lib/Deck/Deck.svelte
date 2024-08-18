@@ -54,7 +54,7 @@
 		<slot />
 	</div>
 	<div class="absolute top-6 right-6 space-x-4 flex items-center">
-		<a class={anchorClass} href="/about">matthewsimo</a>
+		<a class={anchorClass} href="https://matthewsimo.com/about" target="_blank">matthewsimo</a>
 		<ToggleDarkModeButton
 			classes="hover:text-main-400 hover:drop-shadow-md transition-shadow transition-colors duration-200 ease-in-out"
 		/>
