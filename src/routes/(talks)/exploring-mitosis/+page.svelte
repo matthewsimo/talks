@@ -25,7 +25,7 @@
 			d: '"It\'s Time to De-Fragment the Web" talk from core maintainer Sami Jaber'
 		},
 		{
-			l: `/posts/2023-04-15-a-look-at-mitosis`,
+			l: `https://matthewsimo.com/posts/2023-04-15-a-look-at-mitosis`,
 			d: `Blog post version of this talk`
 		}
 	];
