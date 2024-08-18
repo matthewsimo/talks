@@ -17,7 +17,10 @@
 		{ l: `https://svelte.dev/chat`, d: `Svelte Discord` },
 		{ l: `https://sveltesociety.dev/`, d: `Svelte Society` },
 		{ l: `https://www.sveltesummit.com/`, d: `Svelte Summit` },
-		{ l: `/posts/2023-07-26-svelte-ecosystem-overview`, d: `Accompanying Comprehensive Article` }
+		{
+			l: `https://matthewsimo.com/posts/2023-07-26-svelte-ecosystem-overview`,
+			d: `Accompanying Comprehensive Article`
+		}
 	];
 </script>
 
